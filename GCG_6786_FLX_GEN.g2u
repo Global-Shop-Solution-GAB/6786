@@ -1,0 +1,2085 @@
+﻿Program.Sub.ScreenSU.Start
+Gui.F_Main..Create(BaseForm)
+Gui.F_Main..Caption("Flex Schedule Dashboard")
+Gui.F_Main..Size(18000,12210)
+Gui.F_Main..MinX(6000)
+Gui.F_Main..MinY(4000)
+Gui.F_Main..Position(0,0)
+Gui.F_Main..BackColor(-2147483633)
+Gui.F_Main..MousePointer(0)
+Gui.F_Main..Event(UnLoad,F_Main_UnLoad)
+Gui.F_Main..AlwaysOnTop(False)
+Gui.F_Main..FontName("Tahoma")
+Gui.F_Main..FontSize(8.25)
+Gui.F_Main..ControlBox(True)
+Gui.F_Main..MaxButton(True)
+Gui.F_Main..MinButton(True)
+Gui.F_Main..Moveable(True)
+Gui.F_Main..Sizeable(True)
+Gui.F_Main..ShowInTaskBar(True)
+Gui.F_Main..TitleBar(True)
+Gui.F_Main.gsGCFlex.Create(GsGridControl)
+Gui.F_Main.gsGCFlex.Size(17880,9780)
+Gui.F_Main.gsGCFlex.Position(0,1320)
+Gui.F_Main.gsGCFlex.Anchor(15)
+Gui.F_Main.gsGCFlex.TabStop(True)
+Gui.F_Main.gsGCFlex.TabIndex(4)
+Gui.F_Main.gsGCFlex.Event(RowCellClick,gsGCFlex_RowCellClick)
+Gui.F_Main.gsGCFlex.Enabled(True)
+Gui.F_Main.gsGCFlex.Visible(True)
+Gui.F_Main.gsGCFlex.Zorder(0)
+Gui.F_Main.cmdCreate.Create(Button)
+Gui.F_Main.cmdCreate.Size(855,375)
+Gui.F_Main.cmdCreate.Position(240,11310)
+Gui.F_Main.cmdCreate.Anchor(6)
+Gui.F_Main.cmdCreate.Caption("CREATE")
+Gui.F_Main.cmdCreate.Event(Click,cmdCreate_Click)
+Gui.F_Main.cmdCreate.TabStop(True)
+Gui.F_Main.cmdCreate.TabIndex(5)
+Gui.F_Main.cmdCreate.Enabled(True)
+Gui.F_Main.cmdCreate.Visible(True)
+Gui.F_Main.cmdCreate.Zorder(0)
+Gui.F_Main.cmdCreate.FontName("Tahoma")
+Gui.F_Main.cmdCreate.FontSize(8.25)
+Gui.F_Main.dtpStart.Create(DatePicker)
+Gui.F_Main.dtpStart.Size(1470,285)
+Gui.F_Main.dtpStart.Position(9975,450)
+Gui.F_Main.dtpStart.Event(LostFocus,dtpStart_LostFocus)
+Gui.F_Main.dtpStart.TabStop(True)
+Gui.F_Main.dtpStart.TabIndex(1)
+Gui.F_Main.dtpStart.Enabled(False)
+Gui.F_Main.dtpStart.Visible(False)
+Gui.F_Main.dtpStart.Zorder(0)
+Gui.F_Main.dtpStart.CheckBox(False)
+Gui.F_Main.dtpStart.FontName("Tahoma")
+Gui.F_Main.dtpStart.FontSize(8.25)
+Gui.F_Main.dtpStart.Value(1/1/2021)
+Gui.F_Main.dtpEnd.Create(DatePicker)
+Gui.F_Main.dtpEnd.Size(1470,285)
+Gui.F_Main.dtpEnd.Position(11640,450)
+Gui.F_Main.dtpEnd.Event(LostFocus,dtpEnd_LostFocus)
+Gui.F_Main.dtpEnd.TabStop(True)
+Gui.F_Main.dtpEnd.TabIndex(2)
+Gui.F_Main.dtpEnd.Enabled(False)
+Gui.F_Main.dtpEnd.Visible(False)
+Gui.F_Main.dtpEnd.Zorder(0)
+Gui.F_Main.dtpEnd.CheckBox(False)
+Gui.F_Main.dtpEnd.FontName("Tahoma")
+Gui.F_Main.dtpEnd.FontSize(8.25)
+Gui.F_Main.dtpEnd.Value(12/31/2023)
+Gui.F_Main.lblStart.Create(Label,"Start Due Date",False,1050,210,0,9930,240,False,0,"Arial",8,-2147483633,0,0)
+Gui.F_Main.lblStart.BorderStyle(0)
+Gui.F_Main.lbl2.Create(Label,"End Due Date",False,975,210,0,11595,240,False,0,"Arial",8,-2147483633,0,0)
+Gui.F_Main.lbl2.BorderStyle(0)
+Gui.F_Main.cmdRefresh.Create(Button)
+Gui.F_Main.cmdRefresh.Size(990,420)
+Gui.F_Main.cmdRefresh.Position(5805,375)
+Gui.F_Main.cmdRefresh.Caption("Refresh")
+Gui.F_Main.cmdRefresh.Event(Click,cmdRefresh_Click)
+Gui.F_Main.cmdRefresh.TabStop(True)
+Gui.F_Main.cmdRefresh.TabIndex(3)
+Gui.F_Main.cmdRefresh.Enabled(True)
+Gui.F_Main.cmdRefresh.Visible(True)
+Gui.F_Main.cmdRefresh.Zorder(0)
+Gui.F_Main.cmdRefresh.FontName("Tahoma")
+Gui.F_Main.cmdRefresh.FontSize(8.25)
+Gui.F_Main.lbl1.Create(Label,"Select at least one labor sequence and material that you want to schedule.",True,5400,210,0,1260,11400,True,0,"Arial",8,-2147483633,0,0)
+Gui.F_Main.lbl1.Anchor(6)
+Gui.F_Main.lbl1.BorderStyle(0)
+Gui.F_Main.gsGCFlexSel.Create(GsGridControl)
+Gui.F_Main.gsGCFlexSel.Visible(False)
+Gui.F_Main.gsGCFlexSel.Size(960,180)
+Gui.F_Main.gsGCFlexSel.Position(16560,210)
+Gui.F_Main.gsGCFlexSel.Enabled(True)
+Gui.F_Main.gsGCFlexSel.Zorder(0)
+Gui.F_Main.chkWC.Create(CheckBox)
+Gui.F_Main.chkWC.Enabled(True)
+Gui.F_Main.chkWC.Visible(True)
+Gui.F_Main.chkWC.Zorder(0)
+Gui.F_Main.chkWC.Size(1305,300)
+Gui.F_Main.chkWC.Position(3735,375)
+Gui.F_Main.chkWC.Caption("Workcenter")
+Gui.F_Main.chkWC.FontName("Tahoma")
+Gui.F_Main.chkWC.FontSize(8.25)
+Gui.F_Main.chkWC.Value(1)
+Gui.F_Main.chkWC.Event(MouseUp,ToggleCheckboxGroupBy)
+Gui.F_Main.chkOPCode.Create(CheckBox)
+Gui.F_Main.chkOPCode.Enabled(True)
+Gui.F_Main.chkOPCode.Visible(True)
+Gui.F_Main.chkOPCode.Zorder(0)
+Gui.F_Main.chkOPCode.Size(1635,300)
+Gui.F_Main.chkOPCode.Position(3735,705)
+Gui.F_Main.chkOPCode.Caption("Operation Code")
+Gui.F_Main.chkOPCode.FontName("Tahoma")
+Gui.F_Main.chkOPCode.FontSize(8.25)
+Gui.F_Main.chkOPCode.Event(MouseUp,ToggleCheckboxGroupByOP)
+Gui.F_Main.lbl3.Create(Label,"Group by:",True,720,195,0,3585,120,True,0,"Tahoma",8.25,,0,0)
+Gui.F_Main.lbl3.BorderStyle(0)
+Gui.F_Main.cmdPrint.Create(Button)
+Gui.F_Main.cmdPrint.Enabled(False)
+Gui.F_Main.cmdPrint.Visible(False)
+Gui.F_Main.cmdPrint.Zorder(0)
+Gui.F_Main.cmdPrint.Size(1125,345)
+Gui.F_Main.cmdPrint.Position(16020,11310)
+Gui.F_Main.cmdPrint.Caption("PRINT")
+Gui.F_Main.cmdPrint.FontName("Tahoma")
+Gui.F_Main.cmdPrint.FontSize(8.25)
+Gui.F_Main.cmdPrint.Event(Click,cmdPrint_Click)
+Gui.F_Main.lbl4.Create(Label,"Beginning WO",True,1005,195,0,330,195,True,0,"Tahoma",8.25,,0,0)
+Gui.F_Main.lbl4.BorderStyle(0)
+Gui.F_Main.lbl5.Create(Label,"Ending WO",True,795,195,0,330,600,True,0,"Tahoma",8.25,,0,0)
+Gui.F_Main.lbl5.BorderStyle(0)
+Gui.F_Main.txtBegWO.Create(TextBox,"",True,1230,300,0,1530,135,False,0,"Tahoma",8.25,,1)
+Gui.F_Main.txtEndWO.Create(TextBox,"",True,1230,300,0,1530,555,False,0,"Tahoma",8.25,,1)
+Gui.F_Main.cmdBegWO.Create(Button)
+Gui.F_Main.cmdBegWO.Enabled(False)
+Gui.F_Main.cmdBegWO.Visible(True)
+Gui.F_Main.cmdBegWO.Zorder(0)
+Gui.F_Main.cmdBegWO.Size(300,300)
+Gui.F_Main.cmdBegWO.Position(2835,150)
+Gui.F_Main.cmdBegWO.Caption("^")
+Gui.F_Main.cmdBegWO.FontName("Tahoma")
+Gui.F_Main.cmdBegWO.FontSize(8.25)
+Gui.F_Main.cmdBegWO.Event(Click,cmdBegWO_Click)
+Gui.F_Main.cmdEndWO.Create(Button)
+Gui.F_Main.cmdEndWO.Enabled(False)
+Gui.F_Main.cmdEndWO.Visible(True)
+Gui.F_Main.cmdEndWO.Zorder(0)
+Gui.F_Main.cmdEndWO.Size(300,300)
+Gui.F_Main.cmdEndWO.Position(2835,555)
+Gui.F_Main.cmdEndWO.Caption("^")
+Gui.F_Main.cmdEndWO.FontName("Tahoma")
+Gui.F_Main.cmdEndWO.FontSize(8.25)
+Gui.F_Main.cmdEndWO.Event(Click,cmdEndWO_Click)
+Gui.F_Main.chkAllWO.Create(CheckBox)
+Gui.F_Main.chkAllWO.Enabled(True)
+Gui.F_Main.chkAllWO.Visible(True)
+Gui.F_Main.chkAllWO.Zorder(0)
+Gui.F_Main.chkAllWO.Size(1125,300)
+Gui.F_Main.chkAllWO.Position(1530,960)
+Gui.F_Main.chkAllWO.Caption("All WO")
+Gui.F_Main.chkAllWO.FontName("Tahoma")
+Gui.F_Main.chkAllWO.FontSize(8.25)
+Gui.F_Main.chkAllWO.Event(MouseUp,chkAllWO_MouseUp)
+Gui.F_Main.chkAllWO.Value(1)
+Gui.FormSchdPrt..Create(BaseForm)
+Gui.FormSchdPrt..Caption("Schedule Print")
+Gui.FormSchdPrt..Size(16335,8760)
+Gui.FormSchdPrt..MinX(0)
+Gui.FormSchdPrt..MinY(0)
+Gui.FormSchdPrt..Position(0,0)
+Gui.FormSchdPrt..AlwaysOnTop(False)
+Gui.FormSchdPrt..FontName("Tahoma")
+Gui.FormSchdPrt..FontSize(8.25)
+Gui.FormSchdPrt..ControlBox(True)
+Gui.FormSchdPrt..MaxButton(True)
+Gui.FormSchdPrt..MinButton(True)
+Gui.FormSchdPrt..MousePointer(0)
+Gui.FormSchdPrt..Moveable(True)
+Gui.FormSchdPrt..Sizeable(True)
+Gui.FormSchdPrt..ShowInTaskBar(True)
+Gui.FormSchdPrt..TitleBar(True)
+Gui.FormSchdPrt..Event(UnLoad,FormSchdPrt_UnLoad)
+Gui.FormSchdPrt.GsGcSchd.Create(GsGridControl)
+Gui.FormSchdPrt.GsGcSchd.Enabled(True)
+Gui.FormSchdPrt.GsGcSchd.Visible(True)
+Gui.FormSchdPrt.GsGcSchd.Zorder(0)
+Gui.FormSchdPrt.GsGcSchd.Size(16170,7305)
+Gui.FormSchdPrt.GsGcSchd.Position(75,990)
+Gui.FormSchdPrt.GsGcSchd.Anchor(15)
+Gui.FormSchdPrt.GsGcSchd.Event(RowCellClick,GsGcSchd_RowCellClick)
+Gui.FormSchdPrt.cmdRefresh.Create(Button)
+Gui.FormSchdPrt.cmdRefresh.Enabled(False)
+Gui.FormSchdPrt.cmdRefresh.Visible(False)
+Gui.FormSchdPrt.cmdRefresh.Zorder(0)
+Gui.FormSchdPrt.cmdRefresh.Size(1260,495)
+Gui.FormSchdPrt.cmdRefresh.Position(4575,330)
+Gui.FormSchdPrt.cmdRefresh.Caption("REFRESH")
+Gui.FormSchdPrt.cmdRefresh.FontName("Tahoma")
+Gui.FormSchdPrt.cmdRefresh.FontSize(8.25)
+Gui.FormSchdPrt.cmdPrint.Create(Button)
+Gui.FormSchdPrt.cmdPrint.Enabled(True)
+Gui.FormSchdPrt.cmdPrint.Visible(True)
+Gui.FormSchdPrt.cmdPrint.Zorder(0)
+Gui.FormSchdPrt.cmdPrint.Size(1095,420)
+Gui.FormSchdPrt.cmdPrint.Position(930,330)
+Gui.FormSchdPrt.cmdPrint.Caption("PRINT")
+Gui.FormSchdPrt.cmdPrint.FontName("Tahoma")
+Gui.FormSchdPrt.cmdPrint.FontSize(8.25)
+Gui.FormSchdPrt.cmdPrint.Event(Click,Sched_cmdPrint_Click)
+Gui.FormSchdPrt.cmd1.Create(Button)
+Gui.FormSchdPrt.cmd1.Enabled(True)
+Gui.FormSchdPrt.cmd1.Visible(True)
+Gui.FormSchdPrt.cmd1.Zorder(0)
+Gui.FormSchdPrt.cmd1.Size(1125,420)
+Gui.FormSchdPrt.cmd1.Position(2340,330)
+Gui.FormSchdPrt.cmd1.Caption("EXIT")
+Gui.FormSchdPrt.cmd1.FontName("Tahoma")
+Gui.FormSchdPrt.cmd1.FontSize(8.25)
+Gui.FormSchdPrt.cmd1.Event(Click,FormSchdPrt_UnLoad)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.sSchedStart.Declare(String)
+Program.Sub.Preflight.End
+
+'ARC#6786
+'Customer: LOAD KING 
+'	Aug 2022, Nam Le
+
+
+'Mod from Bix's 4973
+'Author: Bix
+'Date: April 30, 2018
+'GCG_4973_FlexScheduleDashboard.g2u
+'Display labor seqeunces with Raw Materials for WOs that can be selected and generate a Flex schedule
+Program.Sub.Main.Start
+
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+Gui.F_Main.cmdCreate.Enabled(False)
+Gui.F_Main..Show
+F.Intrinsic.Control.CallSub(SetContextMenu)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Main.End
+
+Program.Sub.F_Main_UnLoad.Start
+'serialize and unload DT if it has been loaded then kill program
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Datatable.dtFlexSum.Exists)
+	F.Intrinsic.Control.CallSub(Serialize)
+	F.Data.DataTable.Close("dtFlexSum")
+F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.End
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.F_Main_UnLoad.End
+
+Program.Sub.OpenConnection.Start
+'open "con" connection with larger timeout period
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.OpenCompanyConnection(250)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.OpenConnection.End
+
+Program.Sub.CloseConnection.Start
+'close "con" connection
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.ODBC.Connection!con.Close
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.CloseConnection.End
+
+Program.Sub.dtpStart_LostFocus.Start
+'change start date to end date if it comes after end date
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Main!dtpStart.Value,>,V.Screen.F_Main!dtpEnd.Value)
+	Gui.F_Main.dtpStart.Value(V.Screen.F_Main!dtpEnd.Value)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.dtpStart_LostFocus.End
+
+Program.Sub.dtpEnd_LostFocus.Start
+'change end date to start date if it comes before start date
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Screen.F_Main!dtpStart.Value,>,V.Screen.F_Main!dtpEnd.Value)
+	Gui.F_Main.dtpEnd.Value(V.Screen.F_Main!dtpStart.Value)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.dtpEnd_LostFocus.End
+
+'MOD for GCG_6786
+Program.Sub.cmdRefresh_Click.Start
+F.Intrinsic.Control.Try
+	'pull list of labor sequences with their materials
+	V.Local..BulkDeclareString(sError,sSQL)
+	V.Local..BulkDeclareDate(dBeg,dEnd,dComplete)
+	V.Local..BulkDeclareLong(iCnt,iCntMinus)
+	v.Local.sBegWO.Declare(String)
+	v.Local.sEndWO.Declare(String)
+	v.Local.bAllWOChecked.Declare(Boolean)
+	v.Local.sBegWOClause.Declare(String)
+	v.Local.sEndWOClause.Declare(String)
+	
+	f.Intrinsic.UI.InvokeWaitDialog("Loading Jobs...")
+	
+	Gui.F_Main.cmdRefresh.Enabled(False)
+	Gui.F_Main.cmdCreate.Enabled(False)
+	F.Intrinsic.Control.If(V.DataTable.dtFlexSum.Exists)
+		'serialize and close the DT if it is open
+		F.Intrinsic.Control.CallSub(Serialize)
+		F.Data.DataTable.Close("dtFlexSum")
+	F.Intrinsic.Control.EndIf
+	
+	v.Local.sBegWO.Set(v.Screen.F_Main!txtBegWO.Text)
+	v.Local.sEndWO.Set(v.Screen.F_Main!txtEndWO.Text)
+	v.Local.bAllWOChecked.Set(v.Screen.F_Main!chkAllWO.Value)
+	V.Local.dComplete.Set("01/01/1900")
+	
+	f.Intrinsic.Control.If(v.Local.bAllWOChecked)
+		F.Intrinsic.String.Build("select cast(0 as bit) as 'Select', JOB+'-'+SUFFIX as 'WorkOrder', JOB as 'Job', SUFFIX as 'Suffix', SEQ as 'Seq', JOB+SUFFIX+SEQ as 'WOSeq', LMO, if(LMO = 'L', rtrim(PART), '') as 'WorkCenter', if(LMO = 'L', rtrim(DESCRIPTION), '') as 'WCDesc', if(LMO = 'M', PART, '') as 'RMPartRev', if(LMO = 'M', rtrim(left(PART, 17)), '') as 'RMPart', if(LMO = 'M', rtrim(right(PART, 3)), '') as 'RMRev', if(LMO = 'M', HOURS_ESTIMATED, '') as 'RMRunQty', DATE_START as 'StartDate', case when LMO='L' then RTRIM(OPERATION) else '' end as OP_CODE from V_JOB_OPERATIONS where (LMO = 'L' or LMO = 'M') and JOB+SUFFIX+SEQ not in (select distinct JOB+SUFFIX+LABOR_SEQ from V_JOB_CT_FLX_SCHD WHERE Flag_Closed <> 'Y') and SEQ < '995000' and DATE_COMPLETED = '{2}' order by JOB, SUFFIX, SEQ",V.Local.dBeg.PervasiveDate,V.Local.dEnd.PervasiveDate,V.Local.dComplete.PervasiveDate,V.Local.sSQL)
+	f.Intrinsic.Control.Else
+		v.Local.sBegWOClause.Set("")
+		v.Local.sEndWOClause.Set("")
+		
+		f.Intrinsic.Control.If(v.Local.sBegWO,!=,"")
+			f.Intrinsic.String.Build(" and RTRIM(JOB)+'-'+RTRIM(SUFFIX) >= '{0}'", v.Local.sBegWO, v.Local.sBegWOClause)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(v.Local.sEndWO,!=,"")
+			f.Intrinsic.String.Build(" and RTRIM(JOB)+'-'+RTRIM(SUFFIX) <= '{0}'", v.Local.sEndWO, v.Local.sEndWOClause)
+		f.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.String.Build("select cast(0 as bit) as 'Select', JOB+'-'+SUFFIX as 'WorkOrder', JOB as 'Job', SUFFIX as 'Suffix', SEQ as 'Seq', JOB+SUFFIX+SEQ as 'WOSeq', LMO, if(LMO = 'L', rtrim(PART), '') as 'WorkCenter', if(LMO = 'L', rtrim(DESCRIPTION), '') as 'WCDesc', if(LMO = 'M', PART, '') as 'RMPartRev', if(LMO = 'M', rtrim(left(PART, 17)), '') as 'RMPart', if(LMO = 'M', rtrim(right(PART, 3)), '') as 'RMRev', if(LMO = 'M', HOURS_ESTIMATED, '') as 'RMRunQty', DATE_START as 'StartDate', case when LMO='L' then RTRIM(OPERATION) else '' end as OP_CODE from V_JOB_OPERATIONS where (LMO = 'L' or LMO = 'M') and JOB+SUFFIX+SEQ not in (select distinct JOB+SUFFIX+LABOR_SEQ from V_JOB_CT_FLX_SCHD WHERE Flag_Closed <> 'Y') and SEQ < '995000' and DATE_COMPLETED = '{2}' {3} {4} order by JOB, SUFFIX, SEQ",V.Local.dBeg.PervasiveDate,V.Local.dEnd.PervasiveDate,V.Local.dComplete.PervasiveDate, v.Local.sBegWOClause, v.Local.sEndWOClause, V.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+	F.Intrinsic.Control.CallSub(OpenConnection)
+	
+	F.Data.DataTable.CreateFromSQL("dtFlexOp","con",V.Local.sSQL,True)
+	F.Data.DataTable.CreateFromSQL("dtFlexHead","con","select JOB+'-'+SUFFIX as 'WorkOrder', PART+LOCATION as 'FGPartRevLoc', rtrim(left(PART, 17)) as 'FGPart', rtrim(right(PART, 3)) as 'FGRev', QTY_ORDER as 'RunQty', DATE_DUE as 'HeadDue' from V_JOB_HEADER")
+	F.Data.DataTable.CreateFromSQL("dtFlexMstr","con","select PART+LOCATION as 'FGPartRevLoc', PART as 'RMPartRev', rtrim(DESCRIPTION) as 'FGDesc', QTY_ONHAND as 'FGQty', QTY_ONHAND as 'RMQty', rtrim(DESCRIPTION) as 'RMDesc' from V_INVENTORY_MSTR")
+	F.Intrinsic.Control.CallSub(CloseConnection)
+	
+	F.Intrinsic.Control.If(V.DataTable.dtFlexOp.RowCount,=,0)
+		F.Intrinsic.UI.Msgbox("No WO Sequences with due dates in the date range")
+		F.Data.DataTable.Close(dtFlexOp)
+		F.Data.DataTable.Close(dtFlexHead)
+		F.Data.DataTable.Close(dtFlexMstr)
+		Gui.F_Main.cmdRefresh.Enabled(True)
+		Gui.F_Main.cmdCreate.Enabled(True)
+		gui.F_Main.gsGCFlex.Visible(False)
+		F.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else
+		gui.F_Main.gsGCFlex.Visible(True)
+	F.Intrinsic.Control.EndIf
+	
+	F.Data.Linq.Join("LeftJoin","DataTable","dtFlexOp*!*A","DataTable","dtFlexHead*!*B","A.WorkOrder=B.WorkOrder","DataTable","dtFlexMstr*!*C","B.FGPartRevLoc=C.FGPartRevLoc","DataTable","dtFlexMstr*!*D","A.RMPartRev=D.RMPartRev","A.Select*!*B.FGPartrevLoc*!*B.FGPart*!*B.FGRev*!*C.FGDesc*!*C.FGQty*!*A.WorkOrder*!*A.Job*!*A.Suffix*!*B.RunQty*!*A.Seq*!*A.WOSeq*!*A.LMO*!*A.WorkCenter*!*A.WCDesc*!*A.RMPartRev*!*A.RMPart*!*A.RMRev*!*D.RMDesc*!*D.RMQty*!*A.RMRunQty*!*A.StartDate*!*B.HeadDue*!*A.OP_CODE","","","","dtFlex",True)
+	F.Data.DataTable.Close(dtFlexOp)
+	F.Data.DataTable.Close(dtFlexHead)
+	F.Data.DataTable.Close(dtFlexMstr)
+	
+	'Now that all the data is present, going to combine L and M seq's if the M seq comes immediately before the L seq
+	F.Data.DataTable.Clone("dtFlex","dtFlexSum",True)
+	F.Data.DataTable.RemoveColumn("dtFlexSum","LMO")
+	F.Data.DataTable.AddColumn("dtFlexSum","MSeq","String")
+	F.Data.DataTable.AddColumn("dtFlexSum","MWOSeq","String")
+	
+	'F.Intrinsic.Control.For(V.Local.iCnt,1,V.DataTable.dtFlex.RowCount--,1)
+	'	F.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCnt).LMO!FieldValTrim,=,"L")
+	'		F.Intrinsic.Math.Sub(V.Local.iCnt,1,V.Local.iCntMinus)
+	'		F.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCntMinus).LMO!FieldValTrim,=,"M","and",V.DataTable.dtFlex(V.Local.iCntMinus).WorkOrder!FieldValTrim,=,V.DataTable.dtFlex(V.Local.iCnt).WorkOrder!FieldValTrim)
+	'			'Have to selectively pick values from original data table with this MEATY AddRow
+	'			F.Data.DataTable.AddRow("dtFlexSum","Select",V.DataTable.dtFlex(V.Local.iCnt).Select!FieldVal,"FGPartRevLoc",V.DataTable.dtFlex(V.Local.iCnt).FGPartRevLoc!FieldValTrim,"FGPart",V.DataTable.dtFlex(V.Local.iCnt).FGPart!FieldValTrim,"FGRev",V.DataTable.dtFlex(V.Local.iCnt).FGRev!FieldValTrim,"FGDesc",V.DataTable.dtFlex(V.Local.iCnt).FGDesc!FieldValTrim,"FGQty",V.DataTable.dtFlex(V.Local.iCnt).FGQty!FieldVal,"WorkOrder",V.DataTable.dtFlex(V.Local.iCnt).WorkOrder!FieldValTrim,"Job",V.DataTable.dtFlex(V.Local.iCnt).Job!FieldValTrim,"Suffix",V.DataTable.dtFlex(V.Local.iCnt).Suffix!FieldValTrim,"RunQty",V.DataTable.dtFlex(V.Local.iCnt).RunQty!FieldVal,"Seq",V.DataTable.dtFlex(V.Local.iCnt).Seq!FieldValTrim,"WOSeq",V.DataTable.dtFlex(V.Local.iCnt).WOSeq!FieldValTrim,"WorkCenter",V.DataTable.dtFlex(V.Local.iCnt).WorkCenter!FieldValTrim,"WCDesc",V.DataTable.dtFlex(V.Local.iCnt).WCDesc!FieldValTrim,"MSeq",V.DataTable.dtFlex(V.Local.iCntMinus).Seq!FieldValTrim,"MWOSeq",V.DataTable.dtFlex(V.Local.iCntMinus).WOSeq!FieldValTrim,"RMPartRev",V.DataTable.dtFlex(V.Local.iCntMinus).RMPartRev!FieldValTrim,"RMPart",V.DataTable.dtFlex(V.Local.iCntMinus).RMPart!FieldValTrim,"RMDesc",V.DataTable.dtFlex(V.Local.iCntMinus).RMDesc!FieldValTrim,"RMQty",V.DataTable.dtFlex(V.Local.iCntMinus).RMQty!FieldVal,"RMRunQty",V.DataTable.dtFlex(V.Local.iCntMinus).RMRunQty!FieldVal,"StartDate",V.DataTable.dtFlex(V.Local.iCnt).StartDate!FieldVal,"HeadDue",V.DataTable.dtFlex(V.Local.iCnt).HeadDue!FieldVal)
+	'		F.Intrinsic.Control.EndIf
+	'	F.Intrinsic.Control.EndIf
+	'F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	v.Local.lMatSeq.Declare(Long)
+	v.Local.iCountPlus.Declare(Long)
+	v.Local.sDebug.Declare(String)
+	F.Intrinsic.Control.For(V.Local.iCnt,1,V.DataTable.dtFlex.RowCount--,1)
+		
+	'	f.Intrinsic.Control.If(v.Local.iCnt,=,v.DataTable.dtFlex.RowCount--)
+	'	Function.Intrinsic.Debug.InvokeDebugger
+	'	Function.Intrinsic.Debug.Stop
+	'		v.Local.sDebug.Set("S")
+	'	f.Intrinsic.Control.EndIf
+		
+		'handle the last record
+		f.Intrinsic.Control.If(v.Local.iCnt,=,v.DataTable.dtFlex.RowCount--)
+			f.Intrinsic.Control.ExitFor(v.Local.iCnt)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCnt).LMO!FieldValTrim,=,"M")
+			f.Intrinsic.Math.Add(v.Local.iCnt,1,v.Local.iCountPlus)
+			
+	'		f.Intrinsic.Control.If(v.Local.iCountPlus,<,v.DataTable.dtFlex.RowCount)
+				f.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCountPlus).LMO!FieldValTrim,=,"M")
+					v.Local.lMatSeq.Set(v.Local.iCountPlus)
+				f.Intrinsic.Control.Else
+					v.Local.lMatSeq.Set(v.Local.iCnt)
+				f.Intrinsic.Control.EndIf
+				
+	'		f.Intrinsic.Control.If(v.Local.iCountPlus,<,v.DataTable.dtFlex.RowCount--)
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+	'		f.Intrinsic.Control.EndIf
+			
+		f.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCnt).LMO!FieldValTrim,=,"L")
+			F.Intrinsic.Math.Sub(V.Local.iCnt,1,V.Local.iCntMinus)
+			F.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.lMatSeq).WorkOrder!FieldValTrim,=,V.DataTable.dtFlex(V.Local.iCnt).WorkOrder!FieldValTrim)
+				'Have to selectively pick values from original data table with this MEATY AddRow
+				F.Data.DataTable.AddRow("dtFlexSum","Select",V.DataTable.dtFlex(V.Local.iCnt).Select!FieldVal,"FGPartRevLoc",V.DataTable.dtFlex(V.Local.iCnt).FGPartRevLoc!FieldValTrim,"FGPart",V.DataTable.dtFlex(V.Local.iCnt).FGPart!FieldValTrim,"FGRev",V.DataTable.dtFlex(V.Local.iCnt).FGRev!FieldValTrim,"FGDesc",V.DataTable.dtFlex(V.Local.iCnt).FGDesc!FieldValTrim,"FGQty",V.DataTable.dtFlex(V.Local.iCnt).FGQty!FieldVal,"WorkOrder",V.DataTable.dtFlex(V.Local.iCnt).WorkOrder!FieldValTrim,"Job",V.DataTable.dtFlex(V.Local.iCnt).Job!FieldValTrim,"Suffix",V.DataTable.dtFlex(V.Local.iCnt).Suffix!FieldValTrim,"RunQty",V.DataTable.dtFlex(V.Local.iCnt).RunQty!FieldVal,"Seq",V.DataTable.dtFlex(V.Local.iCnt).Seq!FieldValTrim,"WOSeq",V.DataTable.dtFlex(V.Local.iCnt).WOSeq!FieldValTrim,"WorkCenter",V.DataTable.dtFlex(V.Local.iCnt).WorkCenter!FieldValTrim,"WCDesc",V.DataTable.dtFlex(V.Local.iCnt).WCDesc!FieldValTrim,"MSeq",V.DataTable.dtFlex(V.Local.lMatSeq).Seq!FieldValTrim,"MWOSeq",V.DataTable.dtFlex(V.Local.lMatSeq).WOSeq!FieldValTrim,"RMPartRev",V.DataTable.dtFlex(V.Local.lMatSeq).RMPartRev!FieldValTrim,"RMPart",V.DataTable.dtFlex(V.Local.lMatSeq).RMPart!FieldValTrim,"RMDesc",V.DataTable.dtFlex(V.Local.lMatSeq).RMDesc!FieldValTrim,"RMQty",V.DataTable.dtFlex(V.Local.lMatSeq).RMQty!FieldVal,"RMRunQty",V.DataTable.dtFlex(V.Local.lMatSeq).RMRunQty!FieldVal,"StartDate",V.DataTable.dtFlex(V.Local.iCnt).StartDate!FieldVal,"HeadDue",V.DataTable.dtFlex(V.Local.iCnt).HeadDue!FieldVal, "OP_CODE", V.DataTable.dtFlex(V.Local.iCnt).OP_CODE!FieldValTrim)
+			F.Intrinsic.Control.EndIf
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCnt)
+	
+	F.Data.DataTable.AddExpressionColumn("dtFlexSum","UnitQty","Float","IIF(RunQty<>0, RMRunQty / RunQty, 0)")
+	
+	F.Intrinsic.Control.If(V.DataTable.dtFlexSum.RowCount,=,0)
+		F.Intrinsic.UI.Msgbox("No eligible labor sequences found")
+		F.Data.DataTable.Close(dtFlex)
+		F.Data.DataTable.Close(dtFlexSum)
+		Gui.F_Main.cmdRefresh.Enabled(True)
+		Gui.F_Main.cmdCreate.Enabled(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'We can close this DT now that we have the relevant information in the final DT
+	F.Data.DataTable.Close(dtFlex)
+	
+	'This is the DV that the create schedule modules will pull from (and the export selected rows module)
+	F.Data.DataView.Create("dtFlexSum","dvFlexSel",22,"Select = 1","Job, Suffix, Seq")
+	
+	Gui.F_Main.gsGCFlex.AddGridviewFromDatatable("gvFlex","dtFlexSum")
+	Gui.F_Main.gsGCFlexSel.AddGridviewFromDataview("gvFlexSel","dtFlexSum","dvFlexSel")
+	F.Intrinsic.Control.CallSub(GridViewStyle)
+	Gui.F_Main.gsGCFlex.MainView("gvFlex")
+	Gui.F_Main.gsGCFlexSel.MainView("gvFlexSel")
+	F.Intrinsic.Control.CallSub(Deserialize)
+	
+	Gui.F_Main.cmdRefresh.Enabled(True)
+	Gui.F_Main.cmdCreate.Enabled(True)
+	
+	f.Intrinsic.UI.CloseWaitDialog
+
+F.Intrinsic.Control.Catch
+
+
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click.End
+
+'Older version of 4973
+Program.Sub.cmdRefresh_Click_OLD.Start
+'pull list of labor sequences with their materials
+V.Local..BulkDeclareString(sError,sSQL)
+V.Local..BulkDeclareDate(dBeg,dEnd,dComplete)
+V.Local..BulkDeclareLong(iCnt,iCntMinus)
+F.Intrinsic.Control.Try
+Gui.F_Main.cmdRefresh.Enabled(False)
+Gui.F_Main.cmdCreate.Enabled(False)
+F.Intrinsic.Control.If(V.DataTable.dtFlexSum.Exists)
+	'serialize and close the DT if it is open
+	F.Intrinsic.Control.CallSub(Serialize)
+	F.Data.DataTable.Close("dtFlexSum")
+F.Intrinsic.Control.EndIf
+
+
+'Pull in all the data that is needed into dtFlex
+V.Local.dBeg.Set(V.Screen.F_Main!dtpStart.Value)
+V.Local.dEnd.Set(V.Screen.F_Main!dtpEnd.Value)
+V.Local.dComplete.Set("01/01/1900")
+F.Intrinsic.String.Build("select cast(0 as bit) as 'Select', JOB+'-'+SUFFIX as 'WorkOrder', JOB as 'Job', SUFFIX as 'Suffix', SEQ as 'Seq', JOB+SUFFIX+SEQ as 'WOSeq', LMO, if(LMO = 'L', rtrim(PART), '') as 'WorkCenter', if(LMO = 'L', rtrim(DESCRIPTION), '') as 'WCDesc', if(LMO = 'M', PART, '') as 'RMPartRev', if(LMO = 'M', rtrim(left(PART, 17)), '') as 'RMPart', if(LMO = 'M', rtrim(right(PART, 3)), '') as 'RMRev', if(LMO = 'M', HOURS_ESTIMATED, '') as 'RMRunQty', DATE_START as 'StartDate' from V_JOB_OPERATIONS where (LMO = 'L' or LMO = 'M') and JOB+SUFFIX+SEQ not in (select distinct JOB+SUFFIX+LABOR_SEQ from V_JOB_CT_FLX_SCHD WHERE Flag_Closed <> 'Y') and SEQ < '995000' and DATE_DUE between '{0}' and '{1}' and DATE_COMPLETED = '{2}' order by JOB, SUFFIX, SEQ",V.Local.dBeg.PervasiveDate,V.Local.dEnd.PervasiveDate,V.Local.dComplete.PervasiveDate,V.Local.sSQL)
+
+F.Intrinsic.Control.CallSub(OpenConnection)
+
+F.Data.DataTable.CreateFromSQL("dtFlexOp","con",V.Local.sSQL,True)
+F.Data.DataTable.CreateFromSQL("dtFlexHead","con","select JOB+'-'+SUFFIX as 'WorkOrder', PART+LOCATION as 'FGPartRevLoc', rtrim(left(PART, 17)) as 'FGPart', rtrim(right(PART, 3)) as 'FGRev', QTY_ORDER as 'RunQty', DATE_DUE as 'HeadDue' from V_JOB_HEADER")
+F.Data.DataTable.CreateFromSQL("dtFlexMstr","con","select PART+LOCATION as 'FGPartRevLoc', PART as 'RMPartRev', rtrim(DESCRIPTION) as 'FGDesc', QTY_ONHAND as 'FGQty', QTY_ONHAND as 'RMQty', rtrim(DESCRIPTION) as 'RMDesc' from V_INVENTORY_MSTR")
+F.Intrinsic.Control.CallSub(CloseConnection)
+
+F.Intrinsic.Control.If(V.DataTable.dtFlexOp.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("No WO Sequences with due dates in the date range")
+	F.Data.DataTable.Close(dtFlexOp)
+	F.Data.DataTable.Close(dtFlexHead)
+	F.Data.DataTable.Close(dtFlexMstr)
+	Gui.F_Main.cmdRefresh.Enabled(True)
+	Gui.F_Main.cmdCreate.Enabled(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Data.Linq.Join("LeftJoin","DataTable","dtFlexOp*!*A","DataTable","dtFlexHead*!*B","A.WorkOrder=B.WorkOrder","DataTable","dtFlexMstr*!*C","B.FGPartRevLoc=C.FGPartRevLoc","DataTable","dtFlexMstr*!*D","A.RMPartRev=D.RMPartRev","A.Select*!*B.FGPartrevLoc*!*B.FGPart*!*B.FGRev*!*C.FGDesc*!*C.FGQty*!*A.WorkOrder*!*A.Job*!*A.Suffix*!*B.RunQty*!*A.Seq*!*A.WOSeq*!*A.LMO*!*A.WorkCenter*!*A.WCDesc*!*A.RMPartRev*!*A.RMPart*!*A.RMRev*!*D.RMDesc*!*D.RMQty*!*A.RMRunQty*!*A.StartDate*!*B.HeadDue","","","","dtFlex",True)
+F.Data.DataTable.Close(dtFlexOp)
+F.Data.DataTable.Close(dtFlexHead)
+F.Data.DataTable.Close(dtFlexMstr)
+
+'Now that all the data is present, going to combine L and M seq's if the M seq comes immediately before the L seq
+F.Data.DataTable.Clone("dtFlex","dtFlexSum",True)
+F.Data.DataTable.RemoveColumn("dtFlexSum","LMO")
+F.Data.DataTable.AddColumn("dtFlexSum","MSeq","String")
+F.Data.DataTable.AddColumn("dtFlexSum","MWOSeq","String")
+
+F.Intrinsic.Control.For(V.Local.iCnt,1,V.DataTable.dtFlex.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCnt).LMO!FieldValTrim,=,"L")
+		F.Intrinsic.Math.Sub(V.Local.iCnt,1,V.Local.iCntMinus)
+		F.Intrinsic.Control.If(V.DataTable.dtFlex(V.Local.iCntMinus).LMO!FieldValTrim,=,"M","and",V.DataTable.dtFlex(V.Local.iCntMinus).WorkOrder!FieldValTrim,=,V.DataTable.dtFlex(V.Local.iCnt).WorkOrder!FieldValTrim)
+			'Have to selectively pick values from original data table with this MEATY AddRow
+			F.Data.DataTable.AddRow("dtFlexSum","Select",V.DataTable.dtFlex(V.Local.iCnt).Select!FieldVal,"FGPartRevLoc",V.DataTable.dtFlex(V.Local.iCnt).FGPartRevLoc!FieldValTrim,"FGPart",V.DataTable.dtFlex(V.Local.iCnt).FGPart!FieldValTrim,"FGRev",V.DataTable.dtFlex(V.Local.iCnt).FGRev!FieldValTrim,"FGDesc",V.DataTable.dtFlex(V.Local.iCnt).FGDesc!FieldValTrim,"FGQty",V.DataTable.dtFlex(V.Local.iCnt).FGQty!FieldVal,"WorkOrder",V.DataTable.dtFlex(V.Local.iCnt).WorkOrder!FieldValTrim,"Job",V.DataTable.dtFlex(V.Local.iCnt).Job!FieldValTrim,"Suffix",V.DataTable.dtFlex(V.Local.iCnt).Suffix!FieldValTrim,"RunQty",V.DataTable.dtFlex(V.Local.iCnt).RunQty!FieldVal,"Seq",V.DataTable.dtFlex(V.Local.iCnt).Seq!FieldValTrim,"WOSeq",V.DataTable.dtFlex(V.Local.iCnt).WOSeq!FieldValTrim,"WorkCenter",V.DataTable.dtFlex(V.Local.iCnt).WorkCenter!FieldValTrim,"WCDesc",V.DataTable.dtFlex(V.Local.iCnt).WCDesc!FieldValTrim,"MSeq",V.DataTable.dtFlex(V.Local.iCntMinus).Seq!FieldValTrim,"MWOSeq",V.DataTable.dtFlex(V.Local.iCntMinus).WOSeq!FieldValTrim,"RMPartRev",V.DataTable.dtFlex(V.Local.iCntMinus).RMPartRev!FieldValTrim,"RMPart",V.DataTable.dtFlex(V.Local.iCntMinus).RMPart!FieldValTrim,"RMDesc",V.DataTable.dtFlex(V.Local.iCntMinus).RMDesc!FieldValTrim,"RMQty",V.DataTable.dtFlex(V.Local.iCntMinus).RMQty!FieldVal,"RMRunQty",V.DataTable.dtFlex(V.Local.iCntMinus).RMRunQty!FieldVal,"StartDate",V.DataTable.dtFlex(V.Local.iCnt).StartDate!FieldVal,"HeadDue",V.DataTable.dtFlex(V.Local.iCnt).HeadDue!FieldVal)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCnt)
+
+F.Data.DataTable.AddExpressionColumn("dtFlexSum","UnitQty","Float","IIF(RunQty<>0, RMRunQty / RunQty, 0)")
+
+F.Intrinsic.Control.If(V.DataTable.dtFlexSum.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("No eligible labor sequences found")
+	F.Data.DataTable.Close(dtFlex)
+	F.Data.DataTable.Close(dtFlexSum)
+	Gui.F_Main.cmdRefresh.Enabled(True)
+	Gui.F_Main.cmdCreate.Enabled(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'We can close this DT now that we have the relevant information in the final DT
+F.Data.DataTable.Close(dtFlex)
+
+'This is the DV that the create schedule modules will pull from (and the export selected rows module)
+F.Data.DataView.Create("dtFlexSum","dvFlexSel",22,"Select = 1","Job, Suffix, Seq")
+
+Gui.F_Main.gsGCFlex.AddGridviewFromDatatable("gvFlex","dtFlexSum")
+Gui.F_Main.gsGCFlexSel.AddGridviewFromDataview("gvFlexSel","dtFlexSum","dvFlexSel")
+
+F.Intrinsic.Control.CallSub(GridViewStyle)
+Gui.F_Main.gsGCFlex.MainView("gvFlex")
+Gui.F_Main.gsGCFlexSel.MainView("gvFlexSel")
+F.Intrinsic.Control.CallSub(Deserialize)
+
+Gui.F_Main.cmdRefresh.Enabled(True)
+Gui.F_Main.cmdCreate.Enabled(True)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdRefresh_Click_OLD.End
+
+'MOD for GCG_6786
+Program.Sub.cmdCreate_Click.Start
+'function checks the flex schedule data for the algotrithm to use
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+	v.Local.iCounter.Declare(Long)
+	v.Local.sWC.Declare(String)
+	v.Local.sFilter.Declare(String)
+	v.Local.bWCChecked.Declare(Boolean)
+	
+	
+	Gui.F_Main..Enabled(False)
+	
+	'Checks to see if anything has been selected yet
+	F.Intrinsic.Control.If(V.DataView.dtFlexSum!dvFlexSel.RowCount,<,1)
+		F.Intrinsic.UI.Msgbox("Insufficient information to build a flex schedule.","Exiting 'Create Flex Schedule'")
+		Gui.F_Main..Enabled(True)
+		Gui.F_Main..SetFocus(True)
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	
+	'Runs the "generate flex schedule" module
+	F.Intrinsic.UI.InvokeWaitDialog("Generating Flex Schedule")
+	
+	
+	
+	'Get list of selected records before creating
+	f.Data.DataView.Create("dtFlexSum", "dvSelectedRow", 22, "SELECT = 1", "")
+	f.Intrinsic.Control.If(v.DataTable.dtJobToFlex.Exists)
+		f.Data.Datatable.Close("dtJobToFlex")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.ToDataTable("dtFlexSum", "dvSelectedRow", "dtJobToFlex", True)
+	f.Data.DataView.Close("dtFlexSum", "dvSelectedRow")
+	
+	
+	
+	
+	
+	'Aug 18 
+	' Need to add another breakdown for dtJobByWC before calling GenGlexSched 
+	'	if user checks on "Separate by Part"
+	'	=> breakdown by Material also		
+	
+	'checkbox WC vs OP
+	v.Local.bWCChecked.Set(v.Screen.F_Main!chkWC.Value)
+	f.Intrinsic.Control.If(v.Local.bWCChecked)
+		'break down selected into WCs
+		'	run each DT
+		'----------------------------------
+		f.Data.DataView.Create("dtFlexSum", "dvSelectedRow", 22, "SELECT = 1", "")
+		f.Intrinsic.Control.If(v.DataTable.dtListWC.Exists)
+			f.Data.Datatable.Close("dtListWC")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.ToDataTableDistinct("dtFlexSum", "dvSelectedRow", "dtListWC", "WorkCenter")
+		f.Data.DataView.Close("dtFlexSum", "dvSelectedRow")
+		
+		f.Intrinsic.Control.If(v.DataTable.dtListWC.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtListWC.RowCount--,1)
+				v.Local.sWC.Set(v.DataTable.dtListWC(v.Local.iCounter).WorkCenter!FieldValTrim)
+				f.Intrinsic.String.Build("Workcenter='{0}' and SELECT = 1", v.Local.sWC, v.Local.sFilter)
+				f.Data.DataView.Create("dtFlexSum", "dvJobByWC", 22, v.Local.sFilter, "")
+				f.Intrinsic.Control.If(v.DataTable.dtJobByWC.Exists)
+					f.Data.Datatable.Close("dtJobByWC")
+				f.Intrinsic.Control.EndIf
+				f.Data.DataView.ToDataTable("dtFlexSum", "dvJobByWC", "dtJobByWC", True)
+				f.Data.DataView.Close("dtFlexSum", "dvJobByWC")
+				f.Intrinsic.Control.CallSub(GenFlexSched)
+			f.Intrinsic.Control.Next(v.Local.iCounter)
+		f.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Insufficient information to build a flex schedule.","Exiting 'Create Flex Schedule'")
+			Gui.F_Main..Enabled(True)
+			Gui.F_Main..SetFocus(True)
+			F.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		'----------------------------------
+	
+	'break down selected into WCs by OP Code
+	'run each DT
+	f.Intrinsic.Control.Else
+		'----------------------------------
+		f.Data.DataView.Create("dtFlexSum", "dvSelectedRow", 22, "SELECT = 1", "")
+		f.Intrinsic.Control.If(v.DataTable.dtListWC.Exists)
+			f.Data.Datatable.Close("dtListWC")
+		f.Intrinsic.Control.EndIf
+		f.Data.DataView.ToDataTableDistinct("dtFlexSum", "dvSelectedRow", "dtListWC", "OP_CODE")
+		f.Data.DataView.Close("dtFlexSum", "dvSelectedRow")
+		
+		f.Intrinsic.Control.If(v.DataTable.dtListWC.RowCount,>,0)
+			f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtListWC.RowCount--,1)
+				v.Local.sWC.Set(v.DataTable.dtListWC(v.Local.iCounter).OP_CODE!FieldValTrim)
+				f.Intrinsic.String.Build("OP_CODE='{0}' and SELECT = 1", v.Local.sWC, v.Local.sFilter)
+				f.Data.DataView.Create("dtFlexSum", "dvJobByWC", 22, v.Local.sFilter, "")
+				f.Intrinsic.Control.If(v.DataTable.dtJobByWC.Exists)
+					f.Data.Datatable.Close("dtJobByWC")
+				f.Intrinsic.Control.EndIf
+				f.Data.DataView.ToDataTable("dtFlexSum", "dvJobByWC", "dtJobByWC", True)
+				f.Data.DataView.Close("dtFlexSum", "dvJobByWC")
+				f.Intrinsic.Control.CallSub(GenFlexSched)
+			f.Intrinsic.Control.Next(v.Local.iCounter)
+		f.Intrinsic.Control.Else
+			F.Intrinsic.UI.Msgbox("Insufficient information to build a flex schedule.","Exiting 'Create Flex Schedule'")
+			Gui.F_Main..Enabled(True)
+			Gui.F_Main..SetFocus(True)
+			F.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf
+		'----------------------------------
+	f.Intrinsic.Control.EndIf
+	
+		
+	
+	F.Intrinsic.UI.CloseWaitDialog
+	
+	
+	'Show PRINT after create
+	f.Intrinsic.Control.CallSub(RunPrintProcess)
+	
+	'Go back to Create screen and Refresh after Print
+	
+	
+	'Close DTs, refresh GSGC and reenable controls
+	'-------------------------
+'	F.Intrinsic.Control.CallSub(Serialize)
+'	F.Data.DataTable.Close("dtFlexSum")
+'	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+'	Gui.F_Main..Enabled(False)
+'	Gui.F_Main..SetFocus
+	'-------------------------
+	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCreate_Click.End
+
+'Open Print Form
+Program.Sub.RunPrintProcess.Start
+f.Intrinsic.Control.Try
+	f.Intrinsic.Control.CallSub(GetData)
+	f.Intrinsic.Control.CallSub(FormatGrid)
+	gui.FormSchdPrt..Visible(True)
+	gui.FormSchdPrt..SetFocus
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.RunPrintProcess.End
+
+'Older version of 4973
+Program.Sub.cmdCreate_ClickOLD.Start
+'function checks the flex schedule data for the algotrithm to use
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+Gui.F_Main..Enabled(False)
+
+'Checks to see if anything has been selected yet
+F.Intrinsic.Control.If(V.DataView.dtFlexSum!dvFlexSel.RowCount,<,1)
+	F.Intrinsic.UI.Msgbox("Insufficient information to build a flex schedule.","Exiting 'Create Flex Schedule'")
+	Gui.F_Main..Enabled(True)
+	Gui.F_Main..SetFocus(True)
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Runs the "generate flex schedule" module
+F.Intrinsic.UI.InvokeWaitDialog("Generating Flex Schedule")
+F.Intrinsic.Control.CallSub(GenFlexSched)
+F.Intrinsic.UI.CloseWaitDialog
+
+'Close DTs, refresh GSGC and reenable controls
+F.Intrinsic.Control.CallSub(Serialize)
+F.Data.DataTable.Close("dtFlexSum")
+F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+Gui.F_Main..Enabled(True)
+Gui.F_Main..SetFocus
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdCreate_ClickOLD.End
+
+Program.Sub.GridViewStyle.Start
+'Style gridview
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+Gui.F_Main.gsGCFlex.SuspendLayout
+
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex","MultiSelect",False)
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex","AllowSort",True)
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex","AllowFilter",True)
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex","OptionsDetailShowDetailTabs",False)
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex",v.Enum.GridViewPropertyNames!ShowGroupPanel,False)
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex","EnableAppearanceEvenRow",True)
+Gui.F_Main.gsGCFlex.SetGridviewProperty("gvFlex","OptionsViewColumnAutoWidth",False)
+
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPartRevLoc","Visible",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkOrder","Visible",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPartRev","Visible",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WOSeq","Visible",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","MSeq","Visible",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","MWOSeq","Visible",False)
+	
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","Caption"," ")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","Caption","Finished Good Part")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","Caption","FG Rev")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGDesc","Caption","FG Description")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","Caption","Job")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","Caption","Suffix")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","Caption","Seq")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","Caption","Workcenter")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WCDesc","Caption","Workcenter Description")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","Caption","Run Qty")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","Caption","On Hand Qty")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","Caption","Raw Material Part")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","Caption","RM Rev")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMDesc","Caption","RM Desc")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","Caption","RM On Hand")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","Caption","RM Run Qty")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","Caption","Start Date")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","Caption","Job Due Date")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","Caption","Unit Qty")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","OP_CODE","Caption","OP Code")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","AllowEdit",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGDesc","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WCDesc","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMDesc","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","AllowEdit",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","OP_CODE","AllowEdit",False)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGDesc","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WCDesc","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","AllowFocus",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMDesc","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","AllowFocus",False)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","AllowFocus",False)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","MinWidth",30)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","MinWidth",150)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","MinWidth",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGDesc","MinWidth",220)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","MinWidth",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","MinWidth",40)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","MinWidth",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","MinWidth",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WCDesc","MinWidth",220)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","MinWidth",90)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","MinWidth",90)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","MinWidth",150)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","MinWidth",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMDesc","MinWidth",220)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","MinWidth",90)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","MinWidth",90)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","MinWidth",65)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","MinWidth",90)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","MinWidth",90)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","OP_CODE","MinWidth",100)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","Width",30)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","Width",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","Width",50)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","MaxWidth",30)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","MaxWidth",50)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","MaxWidth",50)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","ReadOnly",False)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","Fixed","Left")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","CellForeColor","Blue")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","CellForeColor","Blue")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","CellForeColor","Blue")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","CellForeColor","Blue")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","CellForeColor","Blue")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","CellForeColor","Blue")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGDesc","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WCDesc","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMDesc","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","OP_CODE","HeaderFontBold",True)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Select","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGDesc","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WCDesc","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMPart","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRev","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMDesc","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","OP_CODE","HeaderHAlignment","Center")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGPart","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGRev","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Job","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Suffix","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","Seq","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","WorkCenter","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","CellHAlignment","Center")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","OP_CODE","CellHAlignment","Center")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","EditMaskType","numeric")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","EditMask","#,###,##0.0000")
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RunQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","FGQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","RMRunQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","UnitQty","EditMaskAsDisplayFormat",True)
+
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","StartDate","DisplayCustomDatetime","d")
+Gui.F_Main.gsGCFlex.SetColumnProperty("gvFlex","HeadDue","DisplayCustomDatetime","d")
+
+Gui.F_Main.gsGCFlex.ResumeLayout
+
+'Added in gridview edits to the "Select" = 1 DataView gridview so that I can export it if the user wants to
+Gui.F_Main.gsGCFlexSel.SuspendLayout
+
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel","MultiSelect",False)
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel","AllowSort",True)
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel","AllowFilter",True)
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel","OptionsDetailShowDetailTabs",False)
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel",v.Enum.GridViewPropertyNames!ShowGroupPanel,False)
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel","EnableAppearanceEvenRow",True)
+Gui.F_Main.gsGCFlexSel.SetGridviewProperty("gvFlexSel","OptionsViewColumnAutoWidth",False)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPartRevLoc","Visible",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkOrder","Visible",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPartRev","Visible",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WOSeq","Visible",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","MSeq","Visible",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","MWOSeq","Visible",False)
+	
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","Caption"," ")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","Caption","Part")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","Caption","Rev")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGDesc","Caption","Description")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","Caption","Job")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","Caption","Suffix")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","Caption","Seq")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","Caption","Workcenter")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WCDesc","Caption","Workcenter Description")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","Caption","Run Qty")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","Caption","On Hand Qty")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPart","Caption","Raw Material Part")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","Caption","RM Rev")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMDesc","Caption","RM Desc")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","Caption","RM On Hand")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","Caption","RM On Hand")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","Caption","Start Date")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","Caption","Job Due Date")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","Caption","Unit Qty")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","AllowEdit",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGDesc","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WCDesc","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPart","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMDesc","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","AllowEdit",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","AllowEdit",False)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","AllowFocus",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","AllowFocus",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","AllowFocus",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGDesc","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","AllowFocus",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","AllowFocus",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WCDesc","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPart","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMDesc","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","AllowFocus",False)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","AllowFocus",False)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","MinWidth",30)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","MinWidth",150)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","MinWidth",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGDesc","MinWidth",220)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","MinWidth",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","MinWidth",40)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","MinWidth",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","MinWidth",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WCDesc","MinWidth",220)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","MinWidth",90)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","MinWidth",90)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPart","MinWidth",150)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","MinWidth",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","MinWidth",220)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","MinWidth",90)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","MinWidth",90)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","MinWidth",65)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","MinWidth",90)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","MinWidth",90)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","Width",30)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","Width",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","Width",50)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","MaxWidth",30)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","MaxWidth",50)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","MaxWidth",50)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","ReadOnly",False)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","Fixed","Left")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","CellForeColor","Blue")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","CellForeColor","Blue")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","CellForeColor","Blue")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","CellForeColor","Blue")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGDesc","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WCDesc","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPart","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMDesc","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","HeaderFontBold",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","HeaderFontBold",True)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Select","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGDesc","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WCDesc","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMPart","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRev","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMDesc","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","HeaderHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","HeaderHAlignment","Center")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGPart","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGRev","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Job","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Suffix","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","Seq","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","WorkCenter","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","CellHAlignment","Far")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","CellHAlignment","Center")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","CellHAlignment","Far")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","EditMaskType","numeric")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","EditMaskType","numeric")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","EditMask","#,###,##0.0000")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","EditMask","#,###,##0.0000")
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RunQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","FGQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","RMRunQty","EditMaskAsDisplayFormat",True)
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","UnitQty","EditMaskAsDisplayFormat",True)
+
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","StartDate","DisplayCustomDatetime","d")
+Gui.F_Main.gsGCFlexSel.SetColumnProperty("gvFlexSel","HeadDue","DisplayCustomDatetime","d")
+
+Gui.F_Main.gsGCFlexSel.ResumeLayout
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.GridViewStyle.End
+
+Program.Sub.gsGCFlex_RowCellClick.Start
+'Open S&D or Open WO
+V.Local..BulkDeclareString(sError,sPart,sLoc,sJob,sSuffix,sParams)
+V.Local.bSel.Declare(String)
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.Args.Button,=,"Right")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.SelectCase(V.Args.Column)
+	F.Intrinsic.Control.CaseAny("FGPart","FGRev")
+		Gui.F_Main..Enabled(False)
+		Gui.F_Main.gsGCFlex.GetCellValueByColumnName("gvFlex","FGPartRevLoc",V.Args.RowIndex,V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sPart," ",22,V.Local.sPart)
+		F.Intrinsic.String.Right(V.Local.sPart,2,V.Local.sLoc)
+		F.Intrinsic.String.Left(V.Local.sPart,20,V.Local.sPart)
+		F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,V.Local.sLoc,"O",V.Local.sParams)
+		'Supply & Demand
+		F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+		Gui.F_Main..Enabled(True)
+		Gui.F_Main..SetFocus
+	F.Intrinsic.Control.CaseAny("Job","Suffix")
+		Gui.F_Main..Enabled(False)
+		Gui.F_Main.gsGCFlex.GetCellValueByColumnName("gvFlex","Job",V.Args.RowIndex,V.Local.sJob)
+		Gui.F_Main.gsGCFlex.GetCellValueByColumnName("gvFlex","Suffix",V.Args.RowIndex,V.Local.sSuffix)
+		F.Intrinsic.String.Concat("7!*!",V.Local.sJob,"!*!",V.Local.sSuffix,"!*!A",V.Local.sParams)
+		'Open WO
+		F.Global.General.CallWrapperSync(450000,V.Local.sParams)
+		Gui.F_Main..Enabled(True)
+		Gui.F_Main..SetFocus
+	F.Intrinsic.Control.CaseAny("RMPart","RMRev")
+		Gui.F_Main..Enabled(False)
+		Gui.F_Main.gsGCFlex.GetCellValueByColumnName("gvFlex","RMPartRev",V.Args.RowIndex,V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sPart," ",20,V.Local.sPart)
+		F.Intrinsic.String.ConcatCallWrapperArgs(V.Local.sPart,"","O",V.Local.sParams)
+		'Supply & Demand
+		F.Global.General.CallWrapperSync(300011,V.Local.sParams)
+		Gui.F_Main..Enabled(True)
+		Gui.F_Main..SetFocus
+F.Intrinsic.Control.EndSelect
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.gsGCFlex_RowCellClick.End
+
+'MOD for GCG_6786
+'generate those records passed in dtJobByWC into Flex
+Program.Sub.GenFlexSched.Start
+'Generate flex schedule
+
+F.Intrinsic.Control.Try
+'	V.Local..BulkDeclareString(sError,sSQL,sIncrement,sSchedNum,sMJob,sMSuffix,sMSeq,sJob,sSuffix,sSeq,sFiller,sFiller2,sPart,sWorkCenter,sLine,sFileName,sWG)
+'	V.Local..BulkDeclareLong(iCount,iIncrement)
+	V.Local.fSchedNum.Declare(Float)
+	V.Local.bRet.Declare(Boolean)
+	
+	v.Local.sError.Declare(String)
+	v.Local.sSQL.Declare(String)
+	v.Local.sIncrement.Declare(String)
+	v.Local.sSchedNum.Declare(String)
+	v.Local.sMJob.Declare(String)
+	v.Local.sMSuffix.Declare(String)
+	v.Local.sMSeq.Declare(String)
+	v.Local.sJob.Declare(String)
+	v.Local.sSuffix.Declare(String)
+	v.Local.sSeq.Declare(String)
+	v.Local.sFiller.Declare(String)
+	v.Local.sFiller2.Declare(String)
+	v.Local.sPart.Declare(String)
+	v.Local.sWorkCenter.Declare(String)
+	v.Local.sLine.Declare(String)
+	v.Local.sFileName.Declare(String)
+	v.Local.sWG.Declare(String)
+	v.Local.iCount.Declare(Long)
+	v.Local.iIncrement.Declare(Long)
+
+	'Gets the last schedule number used by flex scheduling and then adds one to it
+	F.Intrinsic.Control.CallSub(OpenConnection)
+	V.Local.sSQL.Set("Select Last_PO_Num From Last_PO Where Ass_Sys = 'SCH' and Ass_Sub_Sys = 'OPT'")
+	F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSchedNum)
+	F.Intrinsic.String.Left(V.Local.sSchedNum,6,V.Local.sSchedNum)
+	F.Intrinsic.Math.Add(V.Local.sSchedNum.Long,1,V.Local.fSchedNum)
+	V.Local.sSchedNum.Set(V.Local.fSchedNum)
+	F.Intrinsic.String.Format(v.Local.sSchedNum,"000000",v.Local.sSchedNum)
+	F.Intrinsic.String.Build("Update Last_PO Set Last_PO_Num = '{0}' + substring(Last_PO_Num,7,1) Where Ass_Sys = 'SCH' and Ass_Sub_Sys = 'OPT'",V.Local.sSchedNum,V.Local.sSQL)
+	F.ODBC.Connection!Con.Execute(V.Local.sSql)
+	F.Intrinsic.Control.CallSub(CloseConnection)
+	
+	'gets list of WorkGroups
+	F.Intrinsic.Control.CallSub(OpenConnection)
+	F.ODBC.Connection!con.ExecuteAndReturn("select distinct WORKGROUP from WORKGROUP_LINE",V.Local.sWG)
+	F.Intrinsic.Control.CallSub(CloseConnection)
+
+	'I got all of this from 4020 as I did not understand generating flex schedules at the time. Commenting as best I can
+	F.Intrinsic.Control.For(V.Local.iCount,0,v.datatable.dtJobByWC.RowCount--,1)
+		F.Intrinsic.Control.If(v.datatable.dtJobByWC(v.Local.iCount).Job!FieldValTrim,<>,"")
+			'Get values from master Dataview for "Select" = 1
+			V.Local.sJob.Set(v.datatable.dtJobByWC(v.Local.iCount).Job!FieldValTrim)
+			V.Local.sSuffix.Set(v.datatable.dtJobByWC(v.Local.iCount).Suffix!FieldValTrim)
+			V.Local.sSeq.Set(v.datatable.dtJobByWC(v.Local.iCount).Seq!FieldValTrim)
+			V.Local.sMJob.Set(v.datatable.dtJobByWC(v.Local.iCount).Job!FieldValTrim)
+			V.Local.sMSuffix.Set(v.datatable.dtJobByWC(v.Local.iCount).Suffix!FieldValTrim)
+			V.Local.sMSeq.Set(v.datatable.dtJobByWC(v.Local.iCount).MSeq!FieldValTrim)
+			V.Local.sPart.Set(v.datatable.dtJobByWC(v.Local.iCount).RMPartRev!FieldValTrim)
+			
+			'If WC is a WG, need to get the SAR from APSV3_UBDETAIL
+			F.Intrinsic.String.IsInString(V.Local.sWG,v.datatable.dtJobByWC(V.Local.iCount).WorkCenter!FieldValTrim,True,V.Local.bRet)
+			F.Intrinsic.Control.If(V.Local.bRet)
+				F.Intrinsic.String.Build("SELECT SAR AS WC FROM APSV3_UBDETAIL WHERE JOB = '{0}' AND SFX = '{1}' AND SEQ = '{2}'",V.Local.sJob.Trim,V.Local.sSuffix.Trim,V.Local.sSeq.Trim,V.Local.sSQL)
+				F.Intrinsic.Control.CallSub(OpenConnection)
+				F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sWorkCenter)
+				F.Intrinsic.Control.CallSub(CloseConnection)
+			F.Intrinsic.Control.Else
+				V.Local.sWorkCenter.Set(v.datatable.dtJobByWC(V.Local.iCount).WorkCenter!FieldValTrim)
+			F.Intrinsic.Control.EndIf
+			
+			F.Intrinsic.Math.Add(V.Local.iIncrement,1,V.Local.iIncrement)
+			F.Intrinsic.String.Format(V.Local.iIncrement,"000000",V.Local.sIncrement)
+			V.Local.sFiller.Set("000000999999")
+			V.Local.sFiller2.Set("000000999999")
+			
+			'Pad all the values to match up with the txt upload format
+			F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+			F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+			F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+			F.Intrinsic.String.RPad(V.Local.sWorkCenter," ",4,V.Local.sWorkCenter)
+			F.Intrinsic.String.RPad(V.Local.sMJob," ",6,V.Local.sMJob)
+			F.Intrinsic.String.RPad(V.Local.sMSuffix," ",3,V.Local.sMSuffix)
+			F.Intrinsic.String.RPad(V.Local.sMSeq," ",11,V.Local.sMSeq)
+			F.Intrinsic.String.RPad(V.Local.sPart," ",25,V.Local.sPart)
+			F.Intrinsic.String.RPad(V.Local.sSchedNum," ",9,V.Local.sSchedNum)
+			F.Intrinsic.String.RPad(V.Local.sIncrement," ",6,V.Local.sIncrement)
+			F.Intrinsic.String.RPad(V.Local.sFiller," ",37,V.Local.sFiller)
+			F.Intrinsic.String.RPad(V.Local.sFiller2," ",12,V.Local.sFiller2)
+			
+			'Combine eveything
+			F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}",V.Local.sLine,V.Local.sSchedNum,V.Local.sIncrement,V.Local.sMJob,V.Local.sMSuffix,V.Local.sMSeq,V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sFiller,V.Local.sWorkCenter,V.Local.sPart,V.Local.sFiller2,V.Ambient.NewLine,V.Local.sLine)
+		F.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.Next(V.Local.iCount)
+	
+	F.Intrinsic.String.Build("{0}\SCHED.TXT",V.Caller.FilesDir,V.Local.sFileName)
+	F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sLine)
+	'Runs the upload utility for flex schedules
+	F.Global.General.CallWrapperSync(6000,"NS!*!50")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.GenFlexSched.End
+
+'Older version of 4973
+Program.Sub.GenFlexSched_OLD.Start
+'Generate flex schedule
+V.Local..BulkDeclareString(sError,sSQL,sIncrement,sSchedNum,sMJob,sMSuffix,sMSeq,sJob,sSuffix,sSeq,sFiller,sFiller2,sPart,sWorkCenter,sLine,sFileName,sWG)
+V.Local..BulkDeclareLong(iCount,iIncrement)
+V.Local.fSchedNum.Declare(Float)
+V.Local.bRet.Declare(Boolean)
+F.Intrinsic.Control.Try
+
+'Gets the last schedule number used by flex scheduling and then adds one to it
+F.Intrinsic.Control.CallSub(OpenConnection)
+V.Local.sSQL.Set("Select Last_PO_Num From Last_PO Where Ass_Sys = 'SCH' and Ass_Sub_Sys = 'OPT'")
+F.ODBC.Connection!Con.ExecuteAndReturn(V.Local.sSQL,V.Local.sSchedNum)
+F.Intrinsic.String.Left(V.Local.sSchedNum,6,V.Local.sSchedNum)
+F.Intrinsic.Math.Add(V.Local.sSchedNum.Long,1,V.Local.fSchedNum)
+V.Local.sSchedNum.Set(V.Local.fSchedNum)
+F.Intrinsic.String.Format(v.Local.sSchedNum,"000000",v.Local.sSchedNum)
+F.Intrinsic.String.Build("Update Last_PO Set Last_PO_Num = '{0}' + substring(Last_PO_Num,7,1) Where Ass_Sys = 'SCH' and Ass_Sub_Sys = 'OPT'",V.Local.sSchedNum,V.Local.sSQL)
+F.ODBC.Connection!Con.Execute(V.Local.sSql)
+F.Intrinsic.Control.CallSub(CloseConnection)
+
+'gets list of WorkGroups
+F.Intrinsic.Control.CallSub(OpenConnection)
+F.ODBC.Connection!con.ExecuteAndReturn("select distinct WORKGROUP from WORKGROUP_LINE",V.Local.sWG)
+F.Intrinsic.Control.CallSub(CloseConnection)
+
+'I got all of this from 4020 as I did not understand generating flex schedules at the time. Commenting as best I can
+F.Intrinsic.Control.For(V.Local.iCount,0,V.DataView.dtFlexSum!dvFlexSel.RowCount--,1)
+	F.Intrinsic.Control.If(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).Job!FieldValTrim,<>,"")
+		'Get values from master Dataview for "Select" = 1
+		V.Local.sJob.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).Job!FieldValTrim)
+		V.Local.sSuffix.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).Suffix!FieldValTrim)
+		V.Local.sSeq.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).Seq!FieldValTrim)
+		V.Local.sMJob.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).Job!FieldValTrim)
+		V.Local.sMSuffix.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).Suffix!FieldValTrim)
+		V.Local.sMSeq.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).MSeq!FieldValTrim)
+		V.Local.sPart.Set(V.DataView.dtFlexSum!dvFlexSel(v.Local.iCount).RMPartRev!FieldValTrim)
+		
+		'If WC is a WG, need to get the SAR from APSV3_UBDETAIL
+		F.Intrinsic.String.IsInString(V.Local.sWG,V.DataView.dtFlexSum!dvFlexSel(V.Local.iCount).WorkCenter!FieldValTrim,True,V.Local.bRet)
+		F.Intrinsic.Control.If(V.Local.bRet)
+			F.Intrinsic.String.Build("SELECT SAR AS WC FROM APSV3_UBDETAIL WHERE JOB = '{0}' AND SFX = '{1}' AND SEQ = '{2}'",V.Local.sJob.Trim,V.Local.sSuffix.Trim,V.Local.sSeq.Trim,V.Local.sSQL)
+			F.Intrinsic.Control.CallSub(OpenConnection)
+			F.ODBC.Connection!con.ExecuteAndReturn(V.Local.sSQL,V.Local.sWorkCenter)
+			F.Intrinsic.Control.CallSub(CloseConnection)
+		F.Intrinsic.Control.Else
+			V.Local.sWorkCenter.Set(V.DataView.dtFlexSum!dvFlexSel(V.Local.iCount).WorkCenter!FieldValTrim)
+		F.Intrinsic.Control.EndIf
+		
+		F.Intrinsic.Math.Add(V.Local.iIncrement,1,V.Local.iIncrement)
+		F.Intrinsic.String.Format(V.Local.iIncrement,"000000",V.Local.sIncrement)
+		V.Local.sFiller.Set("000000999999")
+		V.Local.sFiller2.Set("000000999999")
+		
+		'Pad all the values to match up with the txt upload format
+		F.Intrinsic.String.RPad(V.Local.sJob," ",6,V.Local.sJob)
+		F.Intrinsic.String.RPad(V.Local.sSuffix," ",3,V.Local.sSuffix)
+		F.Intrinsic.String.RPad(V.Local.sSeq," ",6,V.Local.sSeq)
+		F.Intrinsic.String.RPad(V.Local.sWorkCenter," ",4,V.Local.sWorkCenter)
+		F.Intrinsic.String.RPad(V.Local.sMJob," ",6,V.Local.sMJob)
+		F.Intrinsic.String.RPad(V.Local.sMSuffix," ",3,V.Local.sMSuffix)
+		F.Intrinsic.String.RPad(V.Local.sMSeq," ",11,V.Local.sMSeq)
+		F.Intrinsic.String.RPad(V.Local.sPart," ",25,V.Local.sPart)
+		F.Intrinsic.String.RPad(V.Local.sSchedNum," ",9,V.Local.sSchedNum)
+		F.Intrinsic.String.RPad(V.Local.sIncrement," ",6,V.Local.sIncrement)
+		F.Intrinsic.String.RPad(V.Local.sFiller," ",37,V.Local.sFiller)
+		F.Intrinsic.String.RPad(V.Local.sFiller2," ",12,V.Local.sFiller2)
+		
+		'Combine eveything
+		F.Intrinsic.String.Build("{0}{1}{2}{3}{4}{5}{6}{7}{8}{9}{10}{11}{12}{13}",V.Local.sLine,V.Local.sSchedNum,V.Local.sIncrement,V.Local.sMJob,V.Local.sMSuffix,V.Local.sMSeq,V.Local.sJob,V.Local.sSuffix,V.Local.sSeq,V.Local.sFiller,V.Local.sWorkCenter,V.Local.sPart,V.Local.sFiller2,V.Ambient.NewLine,V.Local.sLine)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Next(V.Local.iCount)
+
+F.Intrinsic.String.Build("{0}\SCHED.TXT",V.Caller.FilesDir,V.Local.sFileName)
+F.Intrinsic.File.String2File(V.Local.sFileName,V.Local.sLine)
+'Runs the upload utility for flex schedules
+F.Global.General.CallWrapperSync(6000,"NS!*!50")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.GenFlexSched_OLD.End
+
+Program.Sub.Serialize.Start
+'Serialize project before main DT is closed
+V.Local..BulkDeclareString(sError,sSerialize)
+F.Intrinsic.Control.Try
+
+'gvFlex
+gui.F_Main.gsGCFlex.Serialize("gvFlex",V.Local.sSerialize)
+F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVFLEX",4973,1000,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+F.Intrinsic.Control.EndTry
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+'Deserialize project after main DT is open and populated
+V.Local..BulkDeclareString(sError,sSerialize)
+F.Intrinsic.Control.Try
+
+'Delete old registry records
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVFLEX",4973,0,5,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	F.ODBC.Connection!common.OpenConnection(V.Ambient.Ccon,V.Ambient.Cuser,V.Ambient.Cpass)
+	F.ODBC.Connection!common.Execute("Delete From Gs_Registry Where Reg_ID = 4169 And Seq < 1000;")
+	F.ODBC.Connection!common.Close
+F.Intrinsic.Control.EndIf
+
+'gvFlex
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVFLEX",4973,1000,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	gui.F_Main.gsGCFlex.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+'gvFlex into gvFlexSel
+F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVFLEX",4973,1000,6,"",V.Local.sSerialize)
+F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+	gui.F_Main.gsGCFlexSel.Deserialize(V.Local.sSerialize)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.SetContextMenu.Start
+'Set events from right click menu
+V.Local.sError.Declare(String)
+F.Intrinsic.Control.Try
+
+Gui.F_Main..ContextMenuCreate("ctxFlex")
+Gui.F_Main.gsGCFlex.ContextMenuAttach("ctxFlex")
+Gui.F_Main..ContextMenuAddItem("ctxFlex","SelectAll",0,"Select/UnSelect All")
+Gui.F_Main..ContextMenuAddItem("ctxFlex","Export",0,"Export")
+Gui.F_Main..ContextMenuAddItem("ctxFlex","ExportSelected",0,"Export Selected")
+Gui.F_Main..ContextMenuSetItemEventHandler("ctxFlex","Export","MenuClickExport")
+Gui.F_Main..ContextMenuSetItemEventHandler("ctxFlex","ExportSelected","MenuClickExportSelected")
+Gui.F_Main..ContextMenuSetItemEventHandler("ctxFlex","SelectAll","SelectAllRows")
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.SetContextMenu.End
+
+Program.Sub.SelectAllRows.Start
+f.Intrinsic.Control.Try
+	v.Local.bSelect.Declare(Boolean)
+	f.Intrinsic.UI.Msgbox("This feature is under reviewed.")
+'	v.Local.bSelect.Set(v.DataTable.dtFlexSum(0).SELECT!FieldVal)
+'	f.Intrinsic.Control.If(v.Local.bSelect)
+'		f.Data.Datatable.SetValue("dtFlexSum", -1, "SELECT", False)
+'	f.Intrinsic.Control.Else
+'		f.Data.Datatable.SetValue("dtFlexSum", -1, "SELECT", True)
+'	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.SelectAllRows.End
+
+Program.Sub.MenuClickExport.Start
+'Export Grid View as it appears
+V.Local..BulkDeclareString(sError,sFileExport,sMsg,sDate,sTime)
+V.Local..BulkDeclareBoolean(bExcel,bFileLocked)
+V.Local.sForm.Declare(String, "F_Main")
+V.Local.sControl.Declare(String, "gsGCFlex")
+F.Intrinsic.Control.Try
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+F.Intrinsic.String.TimeString(V.Ambient.Time,V.Local.sTime)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}\GCG_4973_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}\GCG_4973_{1}_Export_{2}_{3}.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExport.End
+
+Program.Sub.MenuClickExportSelected.Start
+'Export selected rows as they appear (if "Select" = 1)
+V.Local..BulkDeclareString(sError,sFileExport,sMsg,sDate,sTime)
+V.Local..BulkDeclareBoolean(bExcel,bFileLocked)
+V.Local.sForm.Declare(String, "F_Main")
+V.Local.sControl.Declare(String, "gsGCFlexSel")
+F.Intrinsic.Control.Try
+
+F.Intrinsic.Control.If(V.DataView.dtFlexSum!dvFlexSel.RowCount,=,0)
+	F.Intrinsic.UI.Msgbox("Exiting export operation.","No Sequences Selected")
+	F.Intrinsic.Control.ExitSub
+F.Intrinsic.Control.EndIf
+
+'Match the Selected view to the standard view
+F.Intrinsic.Control.CallSub(Serialize)
+F.Intrinsic.Control.CallSub(Deserialize)
+
+F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+F.Intrinsic.String.DateString(V.Ambient.Date,V.Local.sDate)
+F.Intrinsic.String.TimeString(V.Ambient.Time,V.Local.sTime)
+F.Intrinsic.Control.If(V.Local.bExcel)
+	F.Intrinsic.String.Build("{0}\GCG_4973_{1}_Export_{2}_{3}.xlsx",V.Caller.LocalGSSTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File : {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"xlsx")
+		F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+	F.Intrinsic.Control.EndIf
+F.Intrinsic.Control.Else
+	F.Intrinsic.String.Build("{0}\GCG_4973_{1}_Export_{2}_{3}.csv",V.Caller.LocalGssTempDir,V.Local.sControl,V.Local.sDate,V.Local.sTime,V.Local.sFileExport)
+	F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+	F.Intrinsic.Control.If(V.Local.bFileLocked)
+		F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+		F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+	F.Intrinsic.Control.Else
+		Gui.[V.Local.sForm].[V.Local.sControl].Export(V.Local.sFileExport,"csv")
+	F.Intrinsic.Control.EndIf
+	F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.(F_Main_UnLoad)
+F.Intrinsic.Control.EndTry
+Program.Sub.MenuClickExportSelected.End
+
+'6786
+'Btn PRINT clicked Event
+Program.Sub.Sched_cmdPrint_Click.Start
+f.Intrinsic.Control.Try
+	V.Local.iBIRunID.Declare(Long)
+	V.Local.iLogID.Declare(Long)
+	v.Local.sReportID.Declare(String)
+	V.Local.sParam.Declare(String)
+	v.Local.sVal.Declare(String)
+	V.Local.sFilePath.Declare(String)
+	V.Local.iRet.Declare(Long)
+	v.Local.bFilePathExist.Declare(Boolean)
+	v.Local.iCount.Declare(Long)
+	v.Local.iCountSched.Declare(Long)
+	v.Local.sTemp.Declare(String)
+	v.Local.sListOfSched.Declare(String)
+	
+	v.Local.sPrintIndex.Declare(String)
+	v.Local.iCountPrint.Declare(Long)
+	
+	gui.FormSchdPrt..Enabled(False)
+	f.Intrinsic.UI.InvokeWaitDialog("Printing Reports...")
+	
+	v.Local.sReportID.Set("1808")
+	
+	f.Data.DataView.Create("dtSchedPrint", "dvSchedPrintSelected", 22, "SELECT = 1", "")
+	f.Intrinsic.Control.If(v.DataTable.dtSchedPrintSelected.Exists)
+		f.Data.Datatable.Close("dtSchedPrintSelected")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataView.ToDataTable("dtSchedPrint", "dvSchedPrintSelected", "dtSchedPrintSelected", True)
+	f.Data.DataView.Close("dtSchedPrint", "dvSchedPrintSelected")
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSchedPrintSelected.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("Insufficient information to print.", "Exit Print")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+
+
+
+	'mark printed
+	'--------------------------------
+	f.Data.Datatable.Select("dtSchedPrint", "SELECT = 1", v.Local.sPrintIndex)
+	f.Intrinsic.Control.If(v.Local.sPrintIndex,!=,"***NORETURN***")
+		f.Intrinsic.String.Split(v.Local.sPrintIndex, "*!*", v.Local.sPrintIndex)
+		f.Intrinsic.Control.For(v.Local.iCountPrint,0,v.Local.sPrintIndex.UBound,1)
+			f.Data.Datatable.SetValue("dtSchedPrint", v.Local.sPrintIndex(v.Local.iCountPrint), "PRINT", "Y")
+		f.Intrinsic.Control.Next(v.Local.iCountPrint)
+	f.Intrinsic.Control.EndIf
+	'--------------------------------
+	
+	
+	f.Intrinsic.Control.For(v.Local.iCount,0, v.DataTable.dtSchedPrintSelected.RowCount--, 1)
+		'generate records to DB
+		'--------------------------------
+		f.Intrinsic.String.Split(v.DataTable.dtSchedPrintSelected(v.Local.iCount).SCHEDULE!FieldValTrim, ",", v.Local.sTemp)
+		f.Intrinsic.Control.For(v.Local.iCountSched,0,v.Local.sTemp.UBound,1)
+			f.Intrinsic.Control.If(v.Local.iCountSched,=,0)
+				f.Intrinsic.String.Build("'{0}'", v.Local.sTemp(v.Local.iCountSched), v.Local.sListOfSched)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0},'{1}'", v.Local.sListOfSched, v.Local.sTemp(v.Local.iCountSched), v.Local.sListOfSched)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCountSched)
+		
+		f.Intrinsic.Control.CallSub(GenerateBIData, "argListOfSched", v.Local.sListOfSched)
+		'--------------------------------
+		
+		
+		F.Global.BI.GetRunID(V.Local.iBIRunID)
+		F.Global.BI.StartLogging(V.Local.iBIRunID,v.Local.sReportID,0,"",V.Local.iLogID)
+		f.Global.BI.StopLogging(v.Local.iLogID)
+		
+	'	V.Local.sFilePath.Set("C:\Users\nle\Desktop\My Projects\6786 - Load King\Report\ABC.pdf")
+		f.Intrinsic.String.Build("{0}\{1}", v.Caller.FilesDir,"6786 - Flex Schedule", v.Local.sFilePath)
+		f.Intrinsic.File.DirExists(v.Local.sFilePath, v.Local.bFilePathExist)
+		f.Intrinsic.Control.If(v.Local.bFilePathExist,=,False)
+			f.Intrinsic.File.CreateDir(v.Local.sFilePath)
+		f.Intrinsic.Control.EndIf
+		
+		f.Intrinsic.String.Build("{0}\{1}-{2} {3}_{4}.pdf", v.Local.sFilePath, v.DataTable.dtSchedPrintSelected(v.Local.iCount).WC_GROUP!FieldValTrim, v.Ambient.Now.FormatYYYY-MM-DD, v.Ambient.Now.FormatHHNNSS, v.Caller.User, v.Local.sFilePath)
+		
+		V.Local.sParam.Set("SwitchG*!*Terminal*!*REPORTID*!*Program*!*ALLSCHED*!*BEGSCHED*!*ENDSCHED*!*ALLMATL")
+		F.Intrinsic.String.Build("N*!*{0}*!*{1}*!**!**!**!**!*",V.Caller.Terminal,v.Local.sReportID, V.Local.sVal)
+		
+		F.Global.BI.RunReportPreProcessor(V.Local.iBIRunID,V.Local.iLogID,V.Local.sParam,V.Local.sVal,"",4,True,"",-1,"",0,V.Local.sFilePath,"",V.Local.iRet)
+	'	F.Global.BI.RunReportPreProcessor(V.Local.iBIRunID,V.Local.iLogID,V.Local.sParam, V.Local.sVal,"",-1,True,"",-1,"",-1,"","",V.Local.iBIRunID)
+	'	f.Global.BI.PrintReport(v.Local.sReportID, 0, v.Local.sParam, v.Local.sVal, "", True)
+	
+		f.Intrinsic.Task.ShellExec(0,"",v.Local.sFilePath,"","",1)
+	
+	f.Intrinsic.Control.Next(v.Local.iCount)
+	
+	
+	'go back to grid
+	'display printed rows
+	f.Intrinsic.UI.CloseWaitDialog
+	gui.FormSchdPrt..Enabled(True)
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Sched_cmdPrint_Click.End
+
+'generate BI Data
+'arg:argListOfSched
+Program.Sub.GenerateBIData.Start
+f.Intrinsic.Control.Try
+	v.Local.sListOfSched.Declare(String)
+	v.Local.sSched.Declare(String)
+	v.Local.sSQL.Declare(String)
+	v.Local.iCount.Declare(Long)
+	v.Local.iIndex.Declare(Long)
+	v.Local.sKeySEQ.Declare(String)
+	v.Local.sWC.Declare(String)
+	v.Local.sRet.Declare(String)
+	v.Local.sOP_Code.Declare(String)
+	v.Local.sSEQ_Qty.Declare(Float)
+	v.Local.sDescComm.Declare(String)
+	v.Local.sSetup.Declare(Float)
+	v.Local.sRuntime.Declare(Float)
+	v.Local.sRouterDesc.Declare(String)
+	v.Local.sUM.Declare(String)
+	v.Local.sRawMatl.Declare(String)
+	v.Local.sMatlQty.Declare(Float)
+	
+	v.Local.sListOfSched.Set(v.Args.argListOfSched)
+	
+	f.ODBC.Connection!Con.OpenCompanyConnection
+	
+	'delete 
+	f.Intrinsic.String.Build("delete from LASER_NC_LABOR where TERMINAL = '{0}' and RPTID='001808'", v.Caller.Terminal, v.Local.sSQL)
+	f.ODBC.Connection!Con.Execute(v.Local.sSQL)
+	
+	'select
+	f.Intrinsic.String.Build("select '{0}' TERMINAL, '001808' RPTID, SCHEDULE SCHED, SCHEDULE_SUFFIX SCHED_SUF, '' KEY_SEQ, '' WC, RTRIM(JOB) WO, RTRIM(SUFFIX) WO_SUF, RTRIM(LABOR_SEQ) WO_SEQ, '000000' FROM_DATE, '999999' TO_DATE, '' RAW_MATL, '000000' FROM_DUE_DATE, '999999' TO_DUE_DATE, '' OP_CODE, '' LMO, 0.0 as SEQ_QTY, '' DESC_COMM, 0.0 as SETUP_HRS, 0.0 RUNTIME_HRS, 0.0 as MATL_QTY, '' UM, RTRIM(JOB)+'-'+RTRIM(SUFFIX)+'-'+RTRIM(LABOR_SEQ) REF_KEY, RTRIM(MATL_JOB)+'-'+RTRIM(MATL_SUFFIX)+'-'+RTRIM(MATL_SEQ) MAT_KEY from JOB_CT_FLX_SCHD where SCHEDULE in ({1})", v.Caller.Terminal, v.Local.sListOfSched, v.Local.sSQL)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSchedHead.Exists)
+		f.Data.Datatable.Close("dtSchedHead")
+	f.Intrinsic.Control.EndIf
+	f.Data.Datatable.CreateFromSQL("dtSchedHead", "Con", v.Local.sSQL, True)
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSchedHead.RowCount,=,0)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	v.Local.iIndex.Set(0)
+	f.Data.Datatable.Clone("dtSchedHead", "dtSchedDetail", True)
+	
+	f.Intrinsic.Control.For(v.Local.iCount, 0, v.DataTable.dtSchedHead.RowCount--, 1)
+		f.Intrinsic.Math.Add(v.Local.iIndex, 1, v.Local.iIndex)
+		v.Local.sWC.Set("")
+		v.Local.sOP_Code.Set("")
+		
+		'PART
+		'-------------------------------
+		f.Intrinsic.String.LPad(v.Local.iIndex, "0", 6, v.Local.sKeySEQ)
+		
+		'WC, OP Code, QTY, ROUTER, SETUP, RUNTIME
+		f.Intrinsic.String.Build("select top 1 RTRIM(PART) WC, RTRIM(OPERATION) OP_CODE, UNITS_OPEN, RTRIM(ROUTER), SETUP, UNITS*UNITS_OPEN, DESCRIPTION from V_JOB_OPERATIONS where RTRIM(JOB)+'-'+RTRIM(SUFFIX)+'-'+RTRIM(SEQ)='{0}'", v.DataTable.dtSchedHead(v.Local.iCount).REF_KEY!FieldValTrim, v.Local.sSQL)
+		f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF,=,False)
+			f.Intrinsic.String.Split(v.Local.sRet,"*!*", v.Local.sRet)
+			v.Local.sWC.Set(v.Local.sRet(0))
+			v.Local.sOP_Code.Set(v.Local.sRet(1))
+			v.Local.sSEQ_Qty.Set(v.Local.sRet(2))
+			v.Local.sDescComm.Set(v.Local.sRet(3))
+			v.Local.sSetup.Set(v.Local.sRet(4))
+			v.Local.sRuntime.Set(v.Local.sRet(5))
+			v.Local.sRouterDesc.Set(v.Local.sRet(6))
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.Datatable.AddRow("dtSchedDetail", "TERMINAL",v.DataTable.dtSchedHead(v.Local.iCount).TERMINAL!FieldValTrim, "RPTID", "001808", "SCHED", v.DataTable.dtSchedHead(v.Local.iCount).SCHED!FieldValTrim, "SCHED_SUF", v.DataTable.dtSchedHead(v.Local.iCount).SCHED_SUF!FieldValTrim, "KEY_SEQ", v.Local.sKeySEQ, "WC", v.Local.sWC, "WO", v.DataTable.dtSchedHead(v.Local.iCount).WO!FieldValTrim, "WO_SUF", v.DataTable.dtSchedHead(v.Local.iCount).WO_SUF!FieldValTrim, "WO_SEQ", v.DataTable.dtSchedHead(v.Local.iCount).WO_SEQ!FieldValTrim, "FROM_DATE", "000000", "TO_DATE", "999999", "FROM_DUE_DATE", "000000", "TO_DUE_DATE", "999999", "OP_CODE", v.Local.sOP_Code, "SEQ_QTY", v.Local.sSEQ_Qty, "DESC_COMM", v.Local.sDescComm, "SETUP_HRS", v.Local.sSetup, "RUNTIME_HRS", v.Local.sRuntime)
+		'-------------------------------
+		
+		'WC
+		'-------------------------------
+		f.Intrinsic.Math.Add(v.Local.iIndex, 1, v.Local.iIndex)
+		f.Intrinsic.String.LPad(v.Local.iIndex, "0", 6, v.Local.sKeySEQ)
+		f.Data.Datatable.AddRow("dtSchedDetail", "TERMINAL",v.DataTable.dtSchedHead(v.Local.iCount).TERMINAL!FieldValTrim, "RPTID", "001808", "SCHED", v.DataTable.dtSchedHead(v.Local.iCount).SCHED!FieldValTrim, "SCHED_SUF", v.DataTable.dtSchedHead(v.Local.iCount).SCHED_SUF!FieldValTrim, "KEY_SEQ", v.Local.sKeySEQ, "WC", v.Local.sWC, "WO", v.DataTable.dtSchedHead(v.Local.iCount).WO!FieldValTrim, "WO_SUF", v.DataTable.dtSchedHead(v.Local.iCount).WO_SUF!FieldValTrim, "WO_SEQ", v.DataTable.dtSchedHead(v.Local.iCount).WO_SEQ!FieldValTrim, "FROM_DATE", "000000", "TO_DATE", "999999", "FROM_DUE_DATE", "000000", "TO_DUE_DATE", "999999", "DESC_COMM", v.Local.sRouterDesc, "LMO", "C")
+		'-------------------------------
+					
+			
+		'RAW
+		'-------------------------------
+		f.Intrinsic.Math.Add(v.Local.iIndex, 1, v.Local.iIndex)
+		f.Intrinsic.String.LPad(v.Local.iIndex, "0", 6, v.Local.sKeySEQ)
+		f.Intrinsic.String.Build("select top 1 RTRIM(PART), UM, HOURS_ESTIMATED from V_JOB_OPERATIONS where RTRIM(JOB)+'-'+RTRIM(SUFFIX)+'-'+RTRIM(SEQ)='{0}'", v.DataTable.dtSchedHead(v.Local.iCount).MAT_KEY!FieldValTrim, v.Local.sSQL)
+		f.ODBC.Connection!Con.ExecuteAndReturn(v.Local.sSQL, v.Local.sRet)
+		f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF,=,False)
+			f.Intrinsic.String.Split(v.Local.sRet,"*!*", v.Local.sRet)
+			v.Local.sRawMatl.Set(v.Local.sRet(0))
+			v.Local.sUM.Set(v.Local.sRet(1))
+			v.Local.sMatlQty.Set(v.Local.sRet(2))
+		f.Intrinsic.Control.EndIf
+		
+		f.Data.Datatable.AddRow("dtSchedDetail", "TERMINAL",v.DataTable.dtSchedHead(v.Local.iCount).TERMINAL!FieldValTrim, "RPTID", "001808", "SCHED", v.DataTable.dtSchedHead(v.Local.iCount).SCHED!FieldValTrim, "SCHED_SUF", v.DataTable.dtSchedHead(v.Local.iCount).SCHED_SUF!FieldValTrim, "KEY_SEQ", v.Local.sKeySEQ, "WC", v.Local.sWC, "WO", v.DataTable.dtSchedHead(v.Local.iCount).WO!FieldValTrim, "WO_SUF", v.DataTable.dtSchedHead(v.Local.iCount).WO_SUF!FieldValTrim, "WO_SEQ", v.DataTable.dtSchedHead(v.Local.iCount).WO_SEQ!FieldValTrim, "FROM_DATE", "000000", "TO_DATE", "999999", "FROM_DUE_DATE", "000000", "TO_DUE_DATE", "999999", "LMO", "M", "RAW_MATL", v.Local.sRawMatl, "UM", v.Local.sUM, "MATL_QTY", v.Local.sMatlQty)
+		
+		'-------------------------------
+		
+	f.Intrinsic.Control.Next(v.Local.iCount)
+	
+	f.Data.Datatable.RemoveColumn("dtSchedDetail", "MAT_KEY")
+	f.Data.Datatable.RemoveColumn("dtSchedDetail", "REF_KEY")
+	
+	
+	f.Data.Datatable.SaveToDB("dtSchedDetail", "Con", "LASER_NC_LABOR", "TERMINAL*!*RPTID*!*SCHED*!*SCHED_SUF*!*KEY_SEQ" ,128)
+	f.Data.Datatable.Close("dtSchedDetail")
+	f.ODBC.Connection!Con.Close
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GenerateBIData.End
+
+Program.Sub.ToggleCheckboxGroupBy.Start
+f.Intrinsic.Control.Try
+
+	v.Local.bCheck.Declare(Boolean)
+	v.Local.bCheck.Set(v.Screen.F_Main!chkWC.Value)
+	f.Intrinsic.Control.If(v.Local.bCheck.not)
+		gui.F_Main.chkOPCode.Value(True)
+		gui.F_Main.chkWC.Value(False)
+	f.Intrinsic.Control.Else
+		gui.F_Main.chkOPCode.Value(False)
+		gui.F_Main.chkWC.Value(True)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ToggleCheckboxGroupBy.End
+
+Program.Sub.ToggleCheckboxGroupByOP.Start
+f.Intrinsic.Control.Try
+
+	v.Local.bCheck.Declare(Boolean)
+	v.Local.bCheck.Set(v.Screen.F_Main!chkWC.Value)
+	f.Intrinsic.Control.If(v.Local.bCheck)
+		gui.F_Main.chkOPCode.Value(True)
+		gui.F_Main.chkWC.Value(False)
+	f.Intrinsic.Control.Else
+		gui.F_Main.chkOPCode.Value(False)
+		gui.F_Main.chkWC.Value(True)
+	f.Intrinsic.Control.EndIf
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ToggleCheckboxGroupByOP.End
+
+
+'GCG_6786
+'------------------------------------------
+'get data for grid
+'	building the record to match business
+'list of records are in dtJobToFlex
+Program.Sub.GetData.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.iCounter.Declare(Long)
+	v.Local.sWCSub2Current.Declare(String)
+	v.Local.sWCSub2Line.Declare(String)
+	v.Local.sSchedGroup.Declare(String)
+	v.Local.sWCGroup.Declare(String)
+	v.Local.sWCCurrent.Declare(String)
+	v.Local.sSchedList.Declare(String)
+	v.Local.sKeyList.Declare(String)
+	
+	'get list of JOB-SUFF-SEQ
+	f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtJobToFlex.RowCount--,1)
+		f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+			f.Intrinsic.String.Build("'{0}-{1}-{2}'", v.DataTable.dtJobToFlex(v.Local.iCounter).JOB!FieldValTrim, v.DataTable.dtJobToFlex(v.Local.iCounter).SUFFIX!FieldValTrim, v.DataTable.dtJobToFlex(v.Local.iCounter).SEQ!FieldValTrim, v.Local.sKeyList)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.String.Build("{3},'{0}-{1}-{2}'", v.DataTable.dtJobToFlex(v.Local.iCounter).JOB!FieldValTrim, v.DataTable.dtJobToFlex(v.Local.iCounter).SUFFIX!FieldValTrim, v.DataTable.dtJobToFlex(v.Local.iCounter).SEQ!FieldValTrim, v.Local.sKeyList, v.Local.sKeyList)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCounter)
+	
+	'get list of Sched
+	
+	f.Data.Datatable.Create("dtSchedPrint",True)
+	f.Data.Datatable.AddColumn("dtSchedPrint","SELECT", "Boolean", False)
+	f.Data.Datatable.AddColumn("dtSchedPrint", "WC_GROUP", "String", "")
+	f.Data.Datatable.AddColumn("dtSchedPrint", "SCHEDULE", "String", "")
+	f.Data.Datatable.AddColumn("dtSchedPrint", "PRINT", "String", "")
+	
+	f.ODBC.Connection!Con.OpenCompanyConnection
+		f.Intrinsic.String.Build("select LABOR_WC, SCHEDULE from JOB_CT_FLX_SCHD where FLAG_CLOSED <> 'Y' and RTRIM(JOB)+'-'+RTRIM(SUFFIX)+'-'+RTRIM(LABOR_SEQ) in ({0}) group by LABOR_WC, SCHEDULE order by LABOR_WC ASC", v.Local.sKeyList, v.Local.sSQL)
+		f.Intrinsic.Control.If(v.DataTable.dtSched.Exists)
+			f.Data.Datatable.Close("dtSched")
+		f.Intrinsic.Control.EndIf
+		f.Data.Datatable.CreateFromSQL("dtSched", "Con", v.Local.sSQL, True)
+	f.ODBC.Connection!Con.Close
+	
+	
+	f.Intrinsic.Control.If(v.DataTable.dtSched.RowCount,=,0)
+		f.Intrinsic.UI.Msgbox("No Schedule Found.")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+
+	
+	f.Intrinsic.Control.For(v.Local.iCounter,0,v.DataTable.dtSched.RowCount--,1)
+		f.Intrinsic.String.Left(v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim,2,v.Local.sWCSub2Line)
+		
+		'if first record, initialize
+		f.Intrinsic.Control.If(v.Local.iCounter,=,0)
+			v.Local.sWCSub2Current.Set(v.Local.sWCSub2Line)
+			v.Local.sWCGroup.Set(v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim)
+			v.Local.sWCCurrent.Set(v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim)
+		f.Intrinsic.Control.EndIf
+		
+		'if last record, wrap up
+		f.Intrinsic.Control.If(v.Local.iCounter,=,v.DataTable.dtSched.RowCount--)
+			f.Intrinsic.Control.If(v.Local.sWCSub2Current,=,v.Local.sWCSub2Line)
+				f.Intrinsic.String.Build("{0},{1}", v.Local.sSchedGroup, v.DataTable.dtSched(v.Local.iCounter).SCHEDULE!FieldValTrim, v.Local.sSchedGroup)
+				f.Data.Datatable.AddRow("dtSchedPrint", "WC_GROUP", v.Local.sWCGroup, "SCHEDULE", v.Local.sSchedGroup)
+			f.Intrinsic.Control.Else
+				f.Data.Datatable.AddRow("dtSchedPrint", "WC_GROUP", v.Local.sWCGroup, "SCHEDULE", v.Local.sSchedGroup)
+				f.Data.Datatable.AddRow("dtSchedPrint", "WC_GROUP", v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim, "SCHEDULE", v.DataTable.dtSched(v.Local.iCounter).SCHEDULE!FieldValTrim)
+				f.Intrinsic.Control.ExitFor(v.Local.iCounter)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.EndIf
+		
+		'if same prefix(2) then group
+		'	if different, add record and move to the next prefix
+		f.Intrinsic.Control.If(v.Local.sWCSub2Current,=,v.Local.sWCSub2Line)
+			f.Intrinsic.Control.If(v.Local.sSchedGroup,=,"")
+				v.Local.sSchedGroup.Set(v.DataTable.dtSched(v.Local.iCounter).SCHEDULE!FieldValTrim)
+			f.Intrinsic.Control.Else
+				f.Intrinsic.String.Build("{0},{1}", v.Local.sSchedGroup, v.DataTable.dtSched(v.Local.iCounter).SCHEDULE!FieldValTrim, v.Local.sSchedGroup)
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.If(v.Local.sWCCurrent,!=,v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim)
+				f.Intrinsic.String.Build("{0},{1}", v.Local.sWCGroup, v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim, v.Local.sWCGroup)
+				v.Local.sWCCurrent.Set(v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim)
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Else
+			f.Data.Datatable.AddRow("dtSchedPrint", "WC_GROUP", v.Local.sWCGroup, "SCHEDULE", v.Local.sSchedGroup)
+			v.Local.sWCSub2Current.Set(v.Local.sWCSub2Line)
+			v.Local.sWCGroup.Set(v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim)
+			v.Local.sSchedGroup.Set(v.DataTable.dtSched(v.Local.iCounter).SCHEDULE!FieldValTrim)
+			v.Local.sWCCurrent.Set(v.DataTable.dtSched(v.Local.iCounter).LABOR_WC!FieldValTrim)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Next(v.Local.iCounter)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GetData.End
+
+'format and display
+Program.Sub.FormatGrid.Start
+f.Intrinsic.Control.Try
+	gui.FormSchdPrt.GsGcSchd.AddGridviewFromDatatable("gvSchedPrint", "dtSchedPrint")
+	
+	gui.FormSchdPrt.GsGcSchd.SetGridviewProperty("gvSchedPrint", v.Enum.GridViewPropertyNames!Editable,False)
+	gui.FormSchdPrt.GsGcSchd.SetGridviewProperty("gvSchedPrint", v.Enum.GridViewPropertyNames!ReadOnly,True)
+	
+	
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SELECT", v.Enum.ColumnPropertyNames!Caption,"SELECT")
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "WC_GROUP", v.Enum.ColumnPropertyNames!Caption,"WORKCENTERS - GROUPED")
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SCHEDULE", v.Enum.ColumnPropertyNames!Caption,"FLEX SCHEDULE NUMBERS")
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "PRINT", v.Enum.ColumnPropertyNames!Caption,"PRINT?")
+	
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SELECT", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "WC_GROUP", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SCHEDULE", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "PRINT", v.Enum.ColumnPropertyNames!HeaderFontBold, True)
+	
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SELECT", v.Enum.ColumnPropertyNames!HeaderHAlignment, "Center")
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "WC_GROUP", v.Enum.ColumnPropertyNames!HeaderHAlignment, "Center")
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SCHEDULE", v.Enum.ColumnPropertyNames!HeaderHAlignment, "Center")
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "PRINT", v.Enum.ColumnPropertyNames!HeaderHAlignment, "Center")
+	
+	
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SELECT", v.Enum.ColumnPropertyNames!MaxWidth, 60)
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "WC_GROUP", v.Enum.ColumnPropertyNames!MinWidth, 100)
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "SCHEDULE", v.Enum.ColumnPropertyNames!MinWidth, 200)
+	gui.FormSchdPrt.GsGcSchd.SetColumnProperty("gvSchedPrint", "PRINT", v.Enum.ColumnPropertyNames!MaxWidth, 60)
+	
+	gui.FormSchdPrt.GsGcSchd.MainView("gvSchedPrint")
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.FormatGrid.End
+
+'select/unselect
+Program.Sub.GsGcSchd_RowCellClick.Start
+f.Intrinsic.Control.Try
+	v.Local.bCheck.Declare(Boolean)
+	
+	f.Intrinsic.Control.SelectCase(v.Args.Column)
+		f.Intrinsic.Control.Case("SELECT")
+			v.Local.bCheck.Set(v.DataTable.dtSchedPrint(v.Args.RowIndex).SELECT!FieldVal)
+			f.Intrinsic.Control.If(v.Local.bCheck)
+				f.Data.Datatable.SetValue("dtSchedPrint", v.Args.RowIndex, "SELECT", False)
+			f.Intrinsic.Control.Else
+				f.Data.Datatable.SetValue("dtSchedPrint", v.Args.RowIndex, "SELECT", True)
+			f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndSelect
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.GsGcSchd_RowCellClick.End
+
+
+'btn PRINT
+Program.Sub.cmdPrint_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRet.Declare(String)
+'	f.Intrinsic.UI.ShowSaveFileDialog("FILE NAME", "", v.Caller.FilesDir, "REPORT PRINTING", v.Local.sRet)
+	gui.FormSchdPrt..show
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdPrint_Click.End
+
+Program.Sub.cmdBegWO_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.sRet.Declare(String)
+	v.Local.sID.Declare(String)
+	
+	f.ODBC.Connection!Conx.OpenCompanyConnection
+		v.Local.sSQL.Set("select RTRIM(JOB)+'-'+RTRIM(SUFFIX) WORKORDER, C.NAME_CUSTOMER from V_JOB_HEADER Q left join V_CUSTOMER_MASTER C on Q.CUSTOMER = C.CUSTOMER order by WORKORDER")
+		F.Intrinsic.UI.Browser("WO", "Conx", v.Local.sSQL, "WO_NUMBER*!*CUSTOMER", "80*!*140", V.Local.sRet)
+	f.ODBC.Connection!Conx.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet,!=, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+		v.Local.sID.Set(v.Local.sRet(0))
+		gui.F_Main.txtBegWO.Text(v.Local.sID)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBegWO_Click.End
+
+Program.Sub.cmdEndWO_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare(String)
+	v.Local.sRet.Declare(String)
+	v.Local.sID.Declare(String)
+	
+	f.ODBC.Connection!Conx.OpenCompanyConnection
+		v.Local.sSQL.Set("select RTRIM(JOB)+'-'+RTRIM(SUFFIX) WORKORDER, C.NAME_CUSTOMER from V_JOB_HEADER Q left join V_CUSTOMER_MASTER C on Q.CUSTOMER = C.CUSTOMER order by WORKORDER")
+		F.Intrinsic.UI.Browser("WO", "Conx", v.Local.sSQL, "WO_NUMBER*!*CUSTOMER", "80*!*140", V.Local.sRet)
+	f.ODBC.Connection!Conx.Close
+	
+	f.Intrinsic.Control.If(v.Local.sRet,!=, "***CANCEL***")
+		f.Intrinsic.String.Split(v.Local.sRet, "*!*", v.Local.sRet)
+		v.Local.sID.Set(v.Local.sRet(0))
+		gui.F_Main.txtEndWO.Text(v.Local.sID)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdEndWO_Click.End
+
+'checkbox ALL WO
+Program.Sub.chkAllWO_MouseUp.Start
+f.Intrinsic.Control.Try
+	v.Local.bCheck.Declare(Boolean)
+	
+	v.Local.bCheck.Set(v.Screen.F_Main!chkAllWO.Value)
+	f.Intrinsic.Control.If(v.Local.bCheck.Not)
+		gui.F_Main.txtBegWO.Enabled(True)
+		gui.F_Main.txtEndWO.Enabled(True)
+		gui.F_Main.cmdBegWO.Enabled(True)
+		gui.F_Main.cmdEndWO.Enabled(True)
+		
+	f.Intrinsic.Control.Else
+		gui.F_Main.txtBegWO.Enabled(False)
+		gui.F_Main.txtEndWO.Enabled(False)
+		gui.F_Main.cmdBegWO.Enabled(False)
+		gui.F_Main.cmdEndWO.Enabled(False)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.chkAllWO_MouseUp.End
+
+Program.Sub.FormSchdPrt_UnLoad.Start
+	gui.FormSchdPrt..Visible(False)
+	F.Intrinsic.Control.CallSub(Serialize)
+	F.Data.DataTable.Close("dtFlexSum")
+	F.Intrinsic.Control.CallSub(cmdRefresh_Click)
+	Gui.F_Main..Enabled(True)
+	Gui.F_Main..SetFocus
+Program.Sub.FormSchdPrt_UnLoad.End
+
+Program.Sub.Comments.Start
+${$5$}$2.0.0.0$}$2
+${$6$}$nle$}$20220818121350449$}$kjzCRYkA6UEoRnCwndYnRXTQH0i7KUgmUJOCYiu29yLALjgvAXMpw1RWfdd57K/b
+Program.Sub.Comments.End
